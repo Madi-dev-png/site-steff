@@ -1,0 +1,369 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Saizo_boutique</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons/font/bootstrap-icons.css" rel="stylesheet" />
+    <link rel="stylesheet" href="css/style.css" />
+
+    <!-- AOS CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.css" rel="stylesheet" />
+</head>
+
+<body>
+
+    <!-- HEADER -->
+    <header class="header" data-aos="fade-down" data-aos-duration="1000">
+        <div class="logo">SAIZO BOUTIQUE</div>
+        <nav>
+            <ul class="nav-links">
+                <li><a href="#">BOUTIQUE</a></li>
+                <li><a href="#">HOMMES</a></li>
+                <li><a href="#">FEMMES</a></li>
+                <li><a href="#">ENFANTS</a></li>
+                <li><a href="#">ACCESSOIRES</a></li>
+            </ul>
+        </nav>
+        <div class="icons">
+            <div class="search-container">
+                <input type="text" id="search-input" placeholder="Rechercher un article..." />
+            </div>
+            <i class="bi bi-search" id="search-icon"></i>
+
+            <i class="bi bi-person"></i>
+            <i class="bi bi-cart"></i>
+        </div>
+    </header>
+
+    <!-- HERO -->
+    <section class="hero" data-aos="fade-right" data-aos-duration="1200">
+        <div class="hero-content">
+            <h4>FAIS-LE MAINTENANT. COURS SUR L'AIR</h4>
+            <h1>CHAUSSURES DE COURSE</h1>
+            <a href="" class="btn" id="open-about">VOIR PLUS</a>
+
+
+        </div>
+        <div class="hero-image">
+            <img src="img/image 1.jpg" alt="Chaussures de course" />
+        </div>
+    </section>
+
+    <!-- ARTICLES EN VEDETTE -->
+    <section class="featured" data-aos="fade-up" data-aos-duration="1000">
+        <h2>ARTICLES EN VEDETTE</h2>
+        <div class="items-carousel">
+            <div class="item" data-aos="zoom-in" data-aos-delay="100">
+                <img src="img/image 2.jpg" alt="Corde" />
+                <p>Corde de résistance longue</p>
+                <span>13 200 FCFA</span>
+                <a href="#" class="buy-btn">Acheter</a>
+            </div>
+            <div class="item" data-aos="zoom-in" data-aos-delay="200">
+                <img src="img/image 3.jpg" alt="Baskets" />
+                <p>Baskets confortables</p>
+                <span>60 000 FCFA</span>
+                <a href="#" class="buy-btn">Acheter</a>
+            </div>
+            <div class="item" data-aos="zoom-in" data-aos-delay="300">
+                <img src="img/image 4.jpg" alt="Ballon" />
+                <p>Ballon de basket</p>
+                <span>18 000 FCFA</span>
+                <a href="#" class="buy-btn">Acheter</a>
+            </div>
+            <div class="item" data-aos="zoom-in" data-aos-delay="400">
+                <img src="img/image 5.jpg" alt="Ballon de foot" />
+                <p>Ballon de foot</p>
+                <span>11 400 FCFA</span>
+                <a href="#" class="buy-btn">Acheter</a>
+            </div>
+            <div class="item" data-aos="zoom-in" data-aos-delay="500">
+                <img src="img/image 6.jpg" alt="Veste" />
+                <p>Veste légère</p>
+                <span>66 000 FCFA</span>
+                <a href="#" class="buy-btn">Acheter</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- ADIDAS ULTRA BOOST -->
+    <section class="boost" data-aos="fade-left" data-aos-duration="1000">
+        <div class="boost-image">
+            <img src="img/image 7.jpg" alt="Adidas Ultra Boost" />
+        </div>
+        <div class="boost-content">
+            <h2>ADIDAS ULTRA BOOST</h2>
+            <a href="#" class="btn">ACHETER</a>
+        </div>
+    </section>
+
+    <!-- CATÉGORIES -->
+    <section class="shop-by" data-aos="fade-up" data-aos-duration="1000">
+        <h2>CHOISISSEZ VOTRE STYLE</h2>
+        <div class="category-list">
+            <div class="category-item" data-aos="flip-left" data-aos-delay="100">
+                <img src="img/image 8.jpg" alt="Sac à dos" />
+                <p>Jordan 1 Low</p>
+                <span>32 400 FCFA</span>
+                <button class="buy-btn-category">
+                    <i class="bi bi-cart-plus"></i> Acheter
+                </button>
+            </div>
+            <div class="category-item" data-aos="flip-left" data-aos-delay="200">
+                <img src="img/image 9.jpg" alt="Casquette" />
+                <p>Jordan 4 Travis</p>
+                <span>12 000 FCFA</span>
+                <button class="buy-btn-category">
+                    <i class="bi bi-cart-plus"></i> Acheter
+                </button>
+            </div>
+            <div class="category-item" data-aos="flip-left" data-aos-delay="300">
+                <img src="img/image 10.jpg" alt="Corde" />
+                <p>Hermès Oran</p>
+                <span>13 200 FCFA</span>
+                <button class="buy-btn-category">
+                    <i class="bi bi-cart-plus"></i> Acheter
+                </button>
+            </div>
+            <div class="category-item" data-aos="flip-left" data-aos-delay="400">
+                <img src="img/image 11.jpg" alt="Veste" />
+                <p>UGG Tasmans</p>
+                <span>53 400 FCFA</span>
+                <button class="buy-btn-category">
+                    <i class="bi bi-cart-plus"></i> Acheter
+                </button>
+            </div>
+            <div class="category-item" data-aos="flip-left" data-aos-delay="500">
+                <img src="img/image 13.jpg" alt="Ballon" />
+                <p>Crocs custom</p>
+                <span>18 000 FCFA</span>
+                <button class="buy-btn-category">
+                    <i class="bi bi-cart-plus"></i> Acheter
+                </button>
+            </div>
+            <div class="category-item" data-aos="flip-left" data-aos-delay="600">
+                <img src="img/image 15.jpg" alt="Chaussures" />
+                <p>Nike AIR Slide</p>
+                <span>58 800 FCFA</span>
+                <button class="buy-btn-category">
+                    <i class="bi bi-cart-plus"></i> Acheter
+                </button>
+            </div>
+        </div>
+    </section>
+
+
+    <!-- FOOTER -->
+    <footer class="footer" data-aos="fade-up" data-aos-duration="1000">
+        <div class="footer-container">
+            <!-- Logo + Description -->
+            <div class="footer-logo-section">
+                <div class="footer-logo">SAIZO <span>BOUTIQUE</span></div>
+                <p>La meilleure boutique de sport pour hommes, femmes et enfants. Qualité et confort assurés.</p>
+            </div>
+
+            <!-- Liens rapides -->
+            <div class="footer-links">
+                <h4>Liens rapides</h4>
+                <nav>
+                    <a href="#">Accueil</a>
+                    <a href="#">Boutique</a>
+                    <a href="#">Hommes</a>
+                    <a href="#">Femmes</a>
+                    <a href="#">Contact</a>
+                </nav>
+            </div>
+
+            <!-- Newsletter & Réseaux sociaux -->
+            <div class="footer-newsletter">
+                <h4>Abonnez-vous à notre newsletter</h4>
+                <form id="newsletter-form">
+                    <input type="email" placeholder="Votre email" required />
+                    <button type="submit">S’abonner</button>
+                </form>
+                <div class="footer-socials">
+                    <a href="#"><i class="bi bi-facebook"></i></a>
+                    <a href="#"><i class="bi bi-instagram"></i></a>
+                    <a href="#"><i class="bi bi-twitter"></i></a>
+                </div>
+            </div>
+        </div>
+        <div class="footer-bottom">&copy; 2025 Porto Sports. Tous droits réservés.</div>
+    </footer>
+
+
+    <!-- MODALE PANIER -->
+    <div id="cart-modal" class="cart-modal">
+        <div class="cart-content">
+            <h3>Mon panier</h3>
+            <ul id="cart-items"></ul>
+
+            <button id="close-cart">Fermer</button>
+        </div>
+    </div>
+    <!-- MODALE ABOUT -->
+    <div id="about-modal" class="modal">
+        <div class="modal-content" data-aos="fade-down" data-aos-duration="800">
+            <span class="close" id="close-about">&times;</span>
+            <h2>Bienvenue chez Saizo Boutique</h2>
+            <p>Découvrez notre collection exclusive de vêtements et accessoires pour hommes, femmes et enfants.</p>
+            <p>Suivez-nous sur Instagram pour ne rien manquer de nos nouveautés et promotions !</p>
+            <a href="https://www.instagram.com/saizo_boutique/" target="_blank" class="btn">Visitez notre Instagram</a>
+            <img src="img/image 14.jpg" alt="Photo boutique"
+                style="width:70%; margin-top: 15px; border-radius: 10px;">
+        </div>
+    </div>
+
+
+    <!-- AOS JS -->
+    <script src="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.js"></script>
+
+    <script>
+        AOS.init({
+            once: true, // animation une seule fois
+            duration: 800,
+        });
+
+        const searchIcon = document.getElementById("search-icon");
+        const searchInput = document.getElementById("search-input");
+
+        let searchVisible = false;
+
+        searchIcon.addEventListener("click", function () {
+            if (!searchVisible) {
+                searchInput.style.display = "block";
+                searchInput.focus();
+                searchVisible = true;
+            } else {
+                const searchTerm = searchInput.value.toLowerCase();
+                const items = document.querySelectorAll(".item, .category-item");
+
+                items.forEach((item) => {
+                    const text = item.textContent.toLowerCase();
+                    item.style.display = text.includes(searchTerm) ? "block" : "none";
+                });
+            }
+        });
+
+        // --- PANIER ---
+
+        const cartIcon = document.querySelector(".bi-cart");
+        const cartModal = document.getElementById("cart-modal");
+        const closeCartBtn = document.getElementById("close-cart");
+        const cartItemsList = document.getElementById("cart-items");
+
+        let cart = [];
+
+        // Fonction pour afficher le panier dans la modale
+        function displayCart() {
+            cartItemsList.innerHTML = "";
+            if (cart.length === 0) {
+                cartItemsList.innerHTML = "<li>Votre panier est vide.</li>";
+            } else {
+                cart.forEach((item, index) => {
+                    const li = document.createElement("li");
+                    li.textContent = `${item.name} — ${item.price}`;
+                    cartItemsList.appendChild(li);
+                });
+            }
+        }
+
+        // Ouvrir la modale panier au clic sur l'icône
+        cartIcon.addEventListener("click", () => {
+            displayCart();
+            cartModal.classList.add("active");
+        });
+
+        // Fermer la modale au clic sur le bouton fermer
+        closeCartBtn.addEventListener("click", () => {
+            cartModal.classList.remove("active");
+        });
+
+        // Ajouter au panier au clic sur un bouton Acheter
+        const buyButtons = document.querySelectorAll(".buy-btn");
+
+        buyButtons.forEach((button) => {
+            button.addEventListener("click", (e) => {
+                e.preventDefault();
+                const itemElem = button.closest(".item, .category-item");
+                const name = itemElem.querySelector("p").textContent.trim() || "Article";
+                const price = itemElem.querySelector("span").textContent.trim() || "";
+
+                // Ajouter dans le panier
+                cart.push({ name, price });
+
+                alert(`${name} a été ajouté au panier.`);
+            });
+        });
+        // Fonction pour ouvrir WhatsApp avec message pré-rempli
+        function sendWhatsAppMessage(itemName, itemPrice) {
+            const phoneNumber = "2250151736324"; // Remplace par ton numéro WhatsApp (ex: 22512345678)
+            const message = `Bonjour, je souhaite commander : ${itemName} au prix de ${itemPrice}. Merci !`;
+            const url = `https://wa.me/${phoneNumber}?text=${encodeURIComponent(message)}`;
+            window.open(url, "_blank");
+        }
+
+        // Gestion des boutons "Acheter" dans la section catégories
+        const buyButtonsCategory = document.querySelectorAll(".buy-btn-category");
+
+        buyButtonsCategory.forEach((button) => {
+            button.addEventListener("click", (e) => {
+                e.preventDefault();
+                const itemElem = button.closest(".category-item");
+                const name = itemElem.querySelector("p").textContent.trim() || "Article";
+                const price = itemElem.querySelector("span").textContent.trim() || "";
+
+                // Ajouter dans le panier
+                cart.push({ name, price });
+
+                alert(`${name} a été ajouté au panier.`);
+
+                // Ouvre WhatsApp avec message de commande
+                sendWhatsAppMessage(name, price);
+            });
+        });
+
+        // Ajoute aussi ouverture WhatsApp sur boutons "Acheter" classiques, si tu veux (optionnel)
+        buyButtons.forEach((button) => {
+            button.addEventListener("click", (e) => {
+                e.preventDefault();
+                const itemElem = button.closest(".item, .category-item");
+                const name = itemElem.querySelector("p").textContent.trim() || "Article";
+                const price = itemElem.querySelector("span").textContent.trim() || "";
+
+                // Ajouter dans le panier
+                cart.push({ name, price });
+
+                alert(`${name} a été ajouté au panier.`);
+
+                // Ouvre WhatsApp avec message de commande
+                sendWhatsAppMessage(name, price);
+            });
+        });
+        const openAboutBtn = document.getElementById("open-about");
+        const aboutModal = document.getElementById("about-modal");
+        const closeAboutBtn = document.getElementById("close-about");
+
+        openAboutBtn.addEventListener("click", (e) => {
+            e.preventDefault();
+            aboutModal.style.display = "block";
+        });
+
+        closeAboutBtn.addEventListener("click", () => {
+            aboutModal.style.display = "none";
+        });
+
+        // Fermer la modale si on clique en dehors du contenu
+        window.addEventListener("click", (e) => {
+            if (e.target === aboutModal) {
+                aboutModal.style.display = "none";
+            }
+        });
+
+
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>À propos de Saizo Boutique</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons/font/bootstrap-icons.css" rel="stylesheet" />
+  <link rel="stylesheet" href="css/style.css" />
+  
+  <!-- AOS CSS -->
+  <link href="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.css" rel="stylesheet" />
+</head>
+<body>
+  <header class="header" data-aos="fade-down" data-aos-duration="1000">
+    <div class="logo">SAIZO <span>BOUTIQUE</span></div>
+    <nav>
+      <ul class="nav-links">
+        <li><a href="index.html">Accueil</a></li>
+        <li><a href="#">Boutique</a></li>
+        <li><a href="#">Hommes</a></li>
+        <li><a href="#">Femmes</a></li>
+        <li><a href="#">Enfants</a></li>
+        <li><a href="#">Accessoires</a></li>
+      </ul>
+    </nav>
+    <div class="icons">
+      <i class="bi bi-person"></i>
+      <i class="bi bi-cart"></i>
+    </div>
+  </header>
+
+  <section class="about-section" data-aos="fade-up" data-aos-duration="1000" style="display: flex; align-items: center; gap: 40px; padding: 60px;">
+    <div class="about-text" style="flex: 1;">
+      <h2>Bienvenue chez Saizo Boutique</h2>
+      <p>Découvrez notre collection exclusive de vêtements et accessoires pour hommes, femmes et enfants.</p>
+      <p>Suivez-nous sur Instagram pour ne rien manquer de nos nouveautés et promotions !</p>
+
+    </div>
+    <div class="about-image" style="flex: 1;">
+      <img src="img/about-photo.jpg" alt="Photo Saizo Boutique" style="width: 100%; border-radius: 10px; object-fit: cover;" />
+    </div>
+  </section>
+
+  <!-- AOS JS -->
+  <script src="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.js"></script>
+  <script>
+    AOS.init({ once: true, duration: 800 });
+  </script>
+</body>
+</html>
