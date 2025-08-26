@@ -246,7 +246,7 @@
             }
         });
 
-        // --- PANIER ---
+      
 
         const cartIcon = document.querySelector(".bi-cart");
         const cartModal = document.getElementById("cart-modal");
@@ -255,7 +255,6 @@
 
         let cart = [];
 
-        // Fonction pour afficher le panier dans la modale
         function displayCart() {
             cartItemsList.innerHTML = "";
             if (cart.length === 0) {
@@ -269,18 +268,18 @@
             }
         }
 
-        // Ouvrir la modale panier au clic sur l'icône
+     
         cartIcon.addEventListener("click", () => {
             displayCart();
             cartModal.classList.add("active");
         });
 
-        // Fermer la modale au clic sur le bouton fermer
+        
         closeCartBtn.addEventListener("click", () => {
             cartModal.classList.remove("active");
         });
 
-        // Ajouter au panier au clic sur un bouton Acheter
+ 
         const buyButtons = document.querySelectorAll(".buy-btn");
 
         buyButtons.forEach((button) => {
@@ -296,7 +295,7 @@
                 alert(`${name} a été ajouté au panier.`);
             });
         });
-        // Fonction pour ouvrir WhatsApp avec message pré-rempli
+        
         function sendWhatsAppMessage(itemName, itemPrice) {
             const phoneNumber = "2250151736324"; // Remplace par ton numéro WhatsApp (ex: 22512345678)
             const message = `Bonjour, je souhaite commander : ${itemName} au prix de ${itemPrice}. Merci !`;
@@ -304,7 +303,7 @@
             window.open(url, "_blank");
         }
 
-        // Gestion des boutons "Acheter" dans la section catégories
+    
         const buyButtonsCategory = document.querySelectorAll(".buy-btn-category");
 
         buyButtonsCategory.forEach((button) => {
@@ -314,17 +313,17 @@
                 const name = itemElem.querySelector("p").textContent.trim() || "Article";
                 const price = itemElem.querySelector("span").textContent.trim() || "";
 
-                // Ajouter dans le panier
+              
                 cart.push({ name, price });
 
                 alert(`${name} a été ajouté au panier.`);
 
-                // Ouvre WhatsApp avec message de commande
+                
                 sendWhatsAppMessage(name, price);
             });
         });
 
-        // Ajoute aussi ouverture WhatsApp sur boutons "Acheter" classiques, si tu veux (optionnel)
+  
         buyButtons.forEach((button) => {
             button.addEventListener("click", (e) => {
                 e.preventDefault();
@@ -332,12 +331,12 @@
                 const name = itemElem.querySelector("p").textContent.trim() || "Article";
                 const price = itemElem.querySelector("span").textContent.trim() || "";
 
-                // Ajouter dans le panier
+          
                 cart.push({ name, price });
 
                 alert(`${name} a été ajouté au panier.`);
 
-                // Ouvre WhatsApp avec message de commande
+              
                 sendWhatsAppMessage(name, price);
             });
         });
@@ -354,7 +353,7 @@
             aboutModal.style.display = "none";
         });
 
-        // Fermer la modale si on clique en dehors du contenu
+     
         window.addEventListener("click", (e) => {
             if (e.target === aboutModal) {
                 aboutModal.style.display = "none";
