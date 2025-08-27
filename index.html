@@ -21,32 +21,40 @@
 
 <body>
 
-    <!-- HEADER -->
-    <header class="header" data-aos="fade-down" data-aos-duration="1000">
-        <div class="logo">SAIZO BOUTIQUE</div>
-        <nav>
-            <ul class="nav-links">
-                <li><a href="#">BOUTIQUE</a></li>
-                <li><a href="#">HOMMES</a></li>
-                <li><a href="#">FEMMES</a></li>
-                <li><a href="#">ENFANTS</a></li>
-                <li><a href="accessoire.html">ACCESSOIRES</a></li>
+   
+   
+<header class="header navbar navbar-expand-lg navbar-dark bg-dark" data-aos="fade-down" data-aos-duration="1000">
+    <div class="container-fluid">
+        <a class="navbar-brand" href="#">SAIZO BOUTIQUE</a>
+
+        
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+
+        <div class="collapse navbar-collapse" id="navbarResponsive">
+            <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
+                <li class="nav-item"><a class="nav-link" href="#">BOUTIQUE</a></li>
+                <li class="nav-item"><a class="nav-link" href="#">HOMMES</a></li>
+                <li class="nav-item"><a class="nav-link" href="#">FEMMES</a></li>
+                <li class="nav-item"><a class="nav-link" href="#">ENFANTS</a></li>
+                <li class="nav-item"><a class="nav-link" href="accessoire.html">ACCESSOIRES</a></li>
             </ul>
-        </nav>
-        <div class="icons">
-            <div class="search-container">
-                <input type="text" id="search-input" placeholder="Rechercher un article..." />
+
+            <div class="d-flex align-items-center ms-lg-3">
+                <input type="text" id="search-input" placeholder="Rechercher un article..." class="form-control form-control-sm me-2" />
+                <i class="bi bi-search text-white" id="search-icon"></i>
+                <i class="bi bi-person text-white ms-3"></i>
+                <i class="bi bi-cart text-white ms-3"></i>
             </div>
-            <i class="bi bi-search" id="search-icon"></i>
-
-            <i class="bi bi-person"></i>
-            <i class="bi bi-cart"></i>
         </div>
-    </header>
+    </div>
+</header>
 
-    <!-- CARROUSEL À LA PLACE DE LA SECTION HERO -->
+
+    
     <section id="hero-carousel" class="carousel slide" data-bs-ride="carousel" data-aos="fade-right" data-aos-duration="1200">
-        <!-- Indicateurs -->
+      
         <div class="carousel-indicators">
             <button type="button" data-bs-target="#hero-carousel" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
             <button type="button" data-bs-target="#hero-carousel" data-bs-slide-to="1" aria-label="Slide 2"></button>
