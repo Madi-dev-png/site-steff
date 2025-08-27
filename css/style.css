@@ -13,7 +13,7 @@ body {
 
 /* HEADER (navbar Bootstrap) */
 .navbar {
-  background: #000 !important;
+  background: #eb300a !important;
   padding: 15px 40px;
 }
 
@@ -368,7 +368,7 @@ body {
 
 
 .footer {
-  background-color: #000;
+  background-color: #eb300a;
   color: #fff;
   padding: 40px 20px;
   font-size: 14px;
@@ -395,7 +395,7 @@ body {
 }
 
 .footer-logo span {
-  color: #6ab04c;
+  color: #090a09;
 }
 
 .footer-logo-section p {
@@ -454,7 +454,7 @@ body {
 }
 
 #newsletter-form button {
-  background-color: #23327d;
+  background-color: #0c0d12;
   color: #fff;
   border: none;
   padding: 8px 16px;
