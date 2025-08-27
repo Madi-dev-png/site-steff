@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Saizo Boutique - 24 Articles</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f5f5f5;
+            margin: 0;
+            padding: 0;
+        }
+
+        .items-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+            gap: 20px;
+            padding: 40px;
+        }
+
+        .item {
+            position: relative;
+            overflow: hidden;
+            border-radius: 10px;
+            cursor: pointer;
+        }
+
+        .item img {
+            width: 100%;
+            height: 200px;
+            object-fit: cover;
+            display: block;
+            transition: transform 0.3s ease;
+        }
+
+        .item:hover img {
+            transform: scale(1.1);
+        }
+
+        .price-overlay {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 100%;
+            text-align: center;
+            background: rgba(0,0,0,0.6);
+            color: #fff;
+            padding: 10px 0;
+            font-weight: bold;
+            font-size: 16px;
+            opacity: 0;
+            transition: opacity 0.3s ease;
+        }
+
+        .item:hover .price-overlay {
+            opacity: 1;
+        }
+
+        @media (hover: none) {
+            .price-overlay {
+                opacity: 1;
+            }
+        }
+    </style>
+</head>
+<body>
+
+<section class="items-grid">
+    <div class="item"><img src="img/image1.jpg" alt="Article 1"><div class="price-overlay">12 000 FCFA</div></div>
+    <div class="item"><img src="img/image2.jpg" alt="Article 2"><div class="price-overlay">8 000 FCFA</div></div>
+    <div class="item"><img src="img/image3.jpg" alt="Article 3"><div class="price-overlay">15 000 FCFA</div></div>
+    <div class="item"><img src="img/image4.jpg" alt="Article 4"><div class="price-overlay">9 000 FCFA</div></div>
+    <div class="item"><img src="img/image5.jpg" alt="Article 5"><div class="price-overlay">20 000 FCFA</div></div>
+    <div class="item"><img src="img/image6.jpg" alt="Article 6"><div class="price-overlay">18 000 FCFA</div></div>
+    <div class="item"><img src="img/image7.jpg" alt="Article 7"><div class="price-overlay">25 000 FCFA</div></div>
+    <div class="item"><img src="img/image8.jpg" alt="Article 8"><div class="price-overlay">30 000 FCFA</div></div>
+    <div class="item"><img src="img/image9.jpg" alt="Article 9"><div class="price-overlay">14 000 FCFA</div></div>
+    <div class="item"><img src="img/image10.jpg" alt="Article 10"><div class="price-overlay">16 000 FCFA</div></div>
+    <div class="item"><img src="img/image11.jpg" alt="Article 11"><div class="price-overlay">22 000 FCFA</div></div>
+    <div class="item"><img src="img/image12.jpg" alt="Article 12"><div class="price-overlay">19 000 FCFA</div></div>
+    <div class="item"><img src="img/image13.jpg" alt="Article 13"><div class="price-overlay">17 000 FCFA</div></div>
+    <div class="item"><img src="img/image14.jpg" alt="Article 14"><div class="price-overlay">21 000 FCFA</div></div>
+    <div class="item"><img src="img/image15.jpg" alt="Article 15"><div class="price-overlay">26 000 FCFA</div></div>
+    <div class="item"><img src="img/image16.jpg" alt="Article 16"><div class="price-overlay">24 000 FCFA</div></div>
+    <div class="item"><img src="img/image17.jpg" alt="Article 17"><div class="price-overlay">28 000 FCFA</div></div>
+    <div class="item"><img src="img/image18.jpg" alt="Article 18"><div class="price-overlay">23 000 FCFA</div></div>
+    <div class="item"><img src="img/image19.jpg" alt="Article 19"><div class="price-overlay">12 500 FCFA</div></div>
+    <div class="item"><img src="img/image20.jpg" alt="Article 20"><div class="price-overlay">13 500 FCFA</div></div>
+    <div class="item"><img src="img/image21.jpg" alt="Article 21"><div class="price-overlay">27 000 FCFA</div></div>
+    <div class="item"><img src="img/image22.jpg" alt="Article 22"><div class="price-overlay">29 000 FCFA</div></div>
+    <div class="item"><img src="img/image23.jpg" alt="Article 23"><div class="price-overlay">11 000 FCFA</div></div>
+    <div class="item"><img src="img/image24.jpg" alt="Article 24"><div class="price-overlay">15 500 FCFA</div></div>
+    <div class="item"><img src="img/image24.jpg" alt="Article 24"><div class="price-overlay">15 500 FCFA</div></div>
+    <div class="item"><img src="img/image24.jpg" alt="Article 24"><div class="price-overlay">15 500 FCFA</div></div>
+    <div class="item"><img src="img/image24.jpg" alt="Article 24"><div class="price-overlay">15 500 FCFA</div></div>
+    <div class="item"><img src="img/image24.jpg" alt="Article 24"><div class="price-overlay">15 500 FCFA</div></div>
+
+</section>
+
+</body>
+</html>
