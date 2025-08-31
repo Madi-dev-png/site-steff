@@ -9,6 +9,10 @@ body {
   background-color: #fff;
   color: #000;
 }
+.logo-img {
+    height: 50px; /* ajuste la hauteur selon ton design */
+    width: auto;  /* garde les proportions */
+}
 
 /* HEADER (navbar Bootstrap) */
 .navbar {
