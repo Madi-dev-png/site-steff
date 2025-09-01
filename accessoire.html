@@ -1,113 +1,65 @@
 <!DOCTYPE html>
 <html lang="fr">
-
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Saizo_boutique - Accessoires</title>
-  <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons/font/bootstrap-icons.css" rel="stylesheet" />
-  <link rel="stylesheet" href="css/style2.css" />
-
-  <!-- AOS CSS -->
-  <link href="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.css" rel="stylesheet" />
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Nike Air Max - Fiche Produit</title>
+  <link rel="stylesheet" href="css/style2.css">
 </head>
-
 <body>
 
-  <!-- HEADER -->
-  <header class="header" data-aos="fade-down" data-aos-duration="1000">
-    <div class="logo">SAIZO BOUTIQUE</div>
-    <nav>
-      <ul class="nav-links">
-        <li><a href="index.html">BOUTIQUE</a></li>
-        <li><a href="#">HOMMES</a></li>
-        <li><a href="#">FEMMES</a></li>
-        <li><a href="#">ENFANTS</a></li>
-        <li><a href="accessoires.html" class="active">ACCESSOIRES</a></li>
-      </ul>
-    </nav>
-    <div class="icons">
-      <i class="bi bi-person"></i>
-      <i class="bi bi-cart"></i>
-    </div>
-  </header>
+  <div class="product-page">
 
-  <!-- PAGE ACCESSOIRES -->
-  <section class="accessoires" data-aos="fade-up" data-aos-duration="1000">
-    <h2>ACCESSOIRES</h2>
-    <div class="accessoires-list">
-      <div class="accessoire-item" data-aos="zoom-in" data-aos-delay="100">
-        <img src="img/accessoire1.jpg" alt="Sac de sport" />
-        <p>Sac de sport Nike</p>
-        <span>25 000 FCFA</span>
-        <button class="buy-btn-category">
-          <i class="bi bi-cart-plus"></i> Acheter
-        </button>
-      </div>
-      <div class="accessoire-item" data-aos="zoom-in" data-aos-delay="200">
-        <img src="img/accessoire2.jpg" alt="Casquette" />
-        <p>Casquette Adidas</p>
-        <span>8 500 FCFA</span>
-        <button class="buy-btn-category">
-          <i class="bi bi-cart-plus"></i> Acheter
-        </button>
-      </div>
-      <div class="accessoire-item" data-aos="zoom-in" data-aos-delay="300">
-        <img src="img/accessoire3.jpg" alt="Montre sport" />
-        <p>Montre connectée</p>
-        <span>45 000 FCFA</span>
-        <button class="buy-btn-category">
-          <i class="bi bi-cart-plus"></i> Acheter
-        </button>
-      </div>
-      <div class="accessoire-item" data-aos="zoom-in" data-aos-delay="400">
-        <img src="img/accessoire4.jpg" alt="Chaussettes" />
-        <p>Chaussettes running</p>
-        <span>4 500 FCFA</span>
-        <button class="buy-btn-category">
-          <i class="bi bi-cart-plus"></i> Acheter
-        </button>
-      </div>
-      <div class="accessoire-item" data-aos="zoom-in" data-aos-delay="500">
-        <img src="img/accessoire5.jpg" alt="Gourde" />
-        <p>Gourde isotherme</p>
-        <span>10 000 FCFA</span>
-        <button class="buy-btn-category">
-          <i class="bi bi-cart-plus"></i> Acheter
-        </button>
-      </div>
-    </div>
-  </section>
+    <!-- Galerie gauche -->
+    <div class="gallery">
+  <img src="img/nike_remove-removebg-preview.png" 
+       alt="Chaussure Nike" class="main-img" style="width:100%; max-width:600px;">
+</div>
 
-  <!-- FOOTER -->
-  <footer class="footer" data-aos="fade-up" data-aos-duration="1000">
-    <div class="footer-container">
-      <div class="footer-logo-section">
-        <div class="footer-logo">SAIZO <span>BOUTIQUE</span></div>
-        <p>La meilleure boutique de sport pour hommes, femmes et enfants. Qualité et confort assurés.</p>
-      </div>
-      <div class="footer-links">
-        <h4>Liens rapides</h4>
-        <nav>
-          <a href="index.html">Accueil</a>
-          <a href="index.html">Boutique</a>
-          <a href="#">Hommes</a>
-          <a href="#">Femmes</a>
-          <a href="#">Contact</a>
-        </nav>
-      </div>
-    </div>
-    <div class="footer-bottom">&copy; 2025 Saizo Boutique. Tous droits réservés.</div>
-  </footer>
 
-  <!-- AOS JS -->
-  <script src="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.js"></script>
-  <script>
-    AOS.init({
-      once: true,
-      duration: 800,
-    });
-  </script>
+    <!-- Infos produit -->
+   <div class="details">
+  <h1>Nike Air Max 270</h1>
+  <p class="price">98 250 F CFA</p>
+
+  <p class="color">Couleur : <span>Noir/Blanc</span></p>
+
+  <div class="sizes">
+    <label for="size">Taille :</label>
+    <select id="size">
+      <option>Choisir une taille</option>
+      <option>38</option>
+      <option>39</option>
+      <option>40</option>
+      <option>41</option>
+      <option>42</option>
+    </select>
+  </div>
+
+  <div class="quantity">
+    <label for="quantity">Quantité :</label>
+    <input type="number" id="quantity" value="1" min="1" max="10">
+  </div>
+
+  <button class="btn">Ajouter au panier</button>
+
+  <p class="info">Vendu et expédié par Nike</p>
+
+  <div class="description">
+    <h3>Description :</h3>
+    <p>La Nike Air Max 270 combine un style moderne et un confort exceptionnel. Avec sa bulle d’air visible à l’arrière, elle offre un amorti optimal pour toutes vos activités quotidiennes.</p>
+  </div>
+
+  <div class="features">
+    <h3>Caractéristiques :</h3>
+    <ul>
+      <li>Tige en textile et synthétique</li>
+      <li>Semelle extérieure en caoutchouc pour plus d’adhérence</li>
+      <li>Amorti Air Max à l’arrière</li>
+      <li>Design respirant et léger</li>
+    </ul>
+  </div>
+</div>
+
 </body>
-
 </html>

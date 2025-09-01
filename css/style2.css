@@ -1,74 +1,129 @@
-/* ACCESSOIRES */
-.accessoires {
-  padding: 60px 40px;
-  background-color: #fff;
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Arial', sans-serif;
 }
 
-.accessoires h2 {
-  font-size: 26px;
-  margin-bottom: 30px;
-  text-align: left;
+body {
+  background: #fdfdfd;
+  color: #333;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
 }
 
-.accessoires-list {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-  gap: 30px;
-  padding: 20px 0;
+.product-page {
+  display: flex;
+  gap: 50px;
+  padding: 40px;
+  background: white;
+  border-radius: 15px;
+  box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+  width: 80%;
+  max-width: 1000px;
 }
 
-.accessoire-item {
-  text-align: center;
-  background-color: #f9f9f9;
-  border-radius: 8px;
-  padding: 15px;
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
+/* Image Nike qui bouge */
+.gallery {
+  flex: 1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.main-img {
+  width: 350px;
+  border-radius: 12px;
+  animation: moveLeft 3s infinite alternate ease-in-out;
+}
+@keyframes moveLeft {
+  from { transform: translateX(0px); }
+  to { transform: translateX(-30px); }
 }
 
-.accessoire-item:hover {
-  transform: translateY(-5px);
-  box-shadow: 0 6px 16px rgba(0, 0, 0, 0.15);
+/*/* Partie droite */
+.details {
+  flex: 1;
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
 }
 
-.accessoire-item img {
-  width: 100%;
-  height: 160px;
-  object-fit: cover;
-  border-radius: 6px;
+.details h1 {
+  font-size: 28px;
   margin-bottom: 10px;
 }
 
-.accessoire-item p {
-  font-weight: 600;
-  font-size: 16px;
+.price {
+  font-size: 22px;
+  color: #e63946;
+  font-weight: bold;
+  margin-bottom: 15px;
+}
+
+.color {
+  margin: 10px 0;
+}
+
+.sizes,
+.quantity {
+  margin: 30px 0;
+}
+
+select,
+input[type="number"] {
+  padding: 8px;
+  border-radius: 6px;
+  border: 1px solid #ccc;
+  width: 150px;
+}
+
+.btn {
+  background: #111;
+  color: white;
+  padding: 12px 25px;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: 0.3s;
+  margin-top: 10px;
+}
+
+.btn:hover {
+  background: #333;
+}
+
+.info {
+  margin-top: 15px;
+  font-size: 14px;
+  color: gray;
+}
+
+.description,
+.features {
+  margin-top: 20px;
+}
+
+.description h3,
+.features h3 {
+  font-size: 18px;
+  margin-bottom: 10px;
+}
+
+.description p {
+  font-size: 14px;
+  color: #333;
+  line-height: 1.5;
+}
+
+.features ul {
+  list-style: disc;
+  padding-left: 20px;
+}
+
+.features li {
+  font-size: 14px;
   margin-bottom: 5px;
 }
 
-.accessoire-item span {
-  color: #555;
-  font-size: 14px;
-}
-
-.accessoire-item .buy-btn-category {
-  margin-top: 8px;
-  background-color: #000;
-  color: #fff;
-  border: none;
-  padding: 8px 35px;
-  border-radius: 4px;
-  cursor: pointer;
-  font-size: 14px;
-  display: flex;
-  align-items: center;
-  gap: 6px;
-  transition: background-color 0.3s ease;
-}
-
-.accessoire-item .buy-btn-category i {
-  font-size: 18px;
-}
-
-.accessoire-item .buy-btn-category:hover {
-  background-color: #333;
-}
