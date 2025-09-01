@@ -462,3 +462,29 @@ body {
     margin: 0 6px;
   }
 }
+/* Empêche le site de se décaler sur mobile */
+html, body {
+  overflow-x: hidden;
+  width: 100%;
+  margin: 0;
+  padding: 0;
+}
+
+/* Correction de la section vidéo */
+.video-section {
+  position: relative;
+  width: 100%; /* au lieu de 100vw */
+  height: 100vh;
+  overflow: hidden;
+}
+
+/* Sécuriser les images et les grilles */
+img {
+  max-width: 100%;
+  height: auto;
+  display: block;
+}
+
+.brand-showcase {
+  overflow-x: hidden;
+}
