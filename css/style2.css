@@ -3,29 +3,44 @@
   padding: 0;
   box-sizing: border-box;
   font-family: 'Arial', sans-serif;
-
 }
 
 body {
-  background: #fdfdfd;
-  color: #333;
+  background: linear-gradient(135deg, rgba(30, 30, 60, 0.9), rgba(70, 0, 120, 0.7), rgba(0, 200, 255, 0.5));
+  color: #fff;
   display: flex;
-  flex-direction: column; /* ✅ pour que la section produits s’empile en dessous */
+  flex-direction: column;
   justify-content: flex-start;
   align-items: center;
   min-height: 100vh;
-   
+  background-size: 400% 400%; /* pour animation */
+  animation: gradientMove 15s ease infinite;
 }
+
+/* Animation douce pour donner vie au fond */
+@keyframes gradientMove {
+  0% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
+}
+
 
 .product-page {
   display: flex;
-  gap: 30px;
-  padding: 25px;
-  background: white;
-  width: 80%;
-  max-width: 1000px;
-  margin-top: 40px;
+  gap: 20px;
+  padding: 15px;
+  width: 60%;
+  height: 50%;
+  margin-top: 20px;
+  border-radius: 10px;
+
+  /* Effet verre noir très transparent */
+  background: rgba(0, 0, 0, 0.2); /* noir à 20% de transparence */
+  backdrop-filter: blur(8px);      
+  -webkit-backdrop-filter: blur(8px);
+  border: 1px solid rgba(255, 255, 255, 0.05); /* bordure subtile très légère */
 }
+
 
 /* Image Nike qui bouge */
 .gallery {
@@ -35,8 +50,8 @@ body {
   align-items: center;
 }
 .main-img {
-  width: 200px;
-  border-radius: 12px;
+  width: 100px;
+  border-radius: 5px;
   animation: moveLeft 3s infinite alternate ease-in-out;
 }
 @keyframes moveLeft {
@@ -47,49 +62,54 @@ body {
 /* Partie droite */
 .details {
   flex: 1;
-  padding: 20px;
+  padding: 15px;
   display: flex;
   flex-direction: column;
+  color: #fff;
+  font-size: 14px;
 }
 
 .details h1 {
-  font-size: 28px;
-  margin-bottom: 10px;
+  font-size: 22px;
+  margin-bottom: 8px;
+  color: #fff;
 }
 
 .price {
-  font-size: 22px;
-  color: #e63946;
+  font-size: 18px;
+  color: #fff;
   font-weight: bold;
-  margin-bottom: 15px;
+  margin-bottom: 12px;
 }
 
 .color {
-  margin: 10px 0;
+  margin: 8px 0;
 }
 
 .sizes,
 .quantity {
-  margin: 30px 0;
+  margin: 20px 0;
 }
 
 select,
 input[type="number"] {
-  padding: 8px;
-  border-radius: 6px;
+  padding: 6px;
+  border-radius: 4px;
   border: 1px solid #ccc;
-  width: 150px;
+  width: 120px;
+  font-size: 13px;
 }
 
 .btn {
-  background: #111;
+  background: #3c0275;
   color: white;
-  padding: 12px 25px;
+  padding: 8px 16px;
+  font-size: 13px;
   border: none;
-  border-radius: 8px;
+  border-radius: 6px;
   cursor: pointer;
   transition: 0.3s;
-  margin-top: 10px;
+  margin-top: 8px;
 }
 
 .btn:hover {
@@ -97,25 +117,26 @@ input[type="number"] {
 }
 
 .info {
-  margin-top: 15px;
-  font-size: 14px;
+  margin-top: 10px;
+  font-size: 12px;
   color: gray;
 }
 
 .description,
 .features {
-  margin-top: 20px;
+  margin-top: 15px;
 }
 
 .description h3,
 .features h3 {
-  font-size: 18px;
-  margin-bottom: 10px;
+  font-size: 16px;
+  margin-bottom: 8px;
+  color: #fff;
 }
 
 .description p {
-  font-size: 14px;
-  color: #333;
+  font-size: 13px;
+  color: #fff;
   line-height: 1.5;
 }
 
@@ -125,39 +146,39 @@ input[type="number"] {
 }
 
 .features li {
-  font-size: 14px;
+  font-size: 13px;
   margin-bottom: 5px;
+  color: #fff;
 }
 
 /* ----------------------- */
-/* ✅ Section autres produits */
+/* Section autres produits */
 .more-products {
-  margin-top: 50px;
+  margin-top: 40px;
   padding: 20px;
   text-align: center;
   width: 80%;
 }
 
 .more-products h2 {
-  font-size: 26px;
+  font-size: 22px;
   margin-bottom: 20px;
   color: #fff;
 }
 
-/* ✅ Image en arrière-plan */
+/* Image en arrière-plan */
 .product-background {
-  background: url("img/background-shoes.jpghttps://i.pinimg.com/1200x/59/92/24/59922433a423be4a1af73f8321ae22a6.jpg") no-repeat center center/cover;
-  padding: 50px 20px;
+  padding: 40px 20px;
   border-radius: 16px;
 }
 
 .product-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-  gap: 20px;
+  grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+  gap: 15px;
 }
 
-/* ✅ Card transparente */
+/* Card transparente */
 .product-card {
   position: relative;
   overflow: hidden;
@@ -177,13 +198,13 @@ input[type="number"] {
   transform: scale(1.1);
 }
 
-/* ✅ Overlay prix */
+/* Overlay prix */
 .product-card .overlay {
   position: absolute;
   inset: 0;
   background: rgba(0,0,0,0.6);
   color: #fff;
-  font-size: 18px;
+  font-size: 16px;
   font-weight: bold;
   display: flex;
   justify-content: center;
