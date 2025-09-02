@@ -3,26 +3,28 @@
   padding: 0;
   box-sizing: border-box;
   font-family: 'Arial', sans-serif;
+
 }
 
 body {
   background: #fdfdfd;
   color: #333;
   display: flex;
-  justify-content: center;
+  flex-direction: column; /* ✅ pour que la section produits s’empile en dessous */
+  justify-content: flex-start;
   align-items: center;
-  height: 100vh;
+  min-height: 100vh;
+   
 }
 
 .product-page {
   display: flex;
-  gap: 50px;
-  padding: 40px;
+  gap: 30px;
+  padding: 25px;
   background: white;
-  border-radius: 15px;
-  box-shadow: 0 4px 15px rgba(0,0,0,0.1);
   width: 80%;
   max-width: 1000px;
+  margin-top: 40px;
 }
 
 /* Image Nike qui bouge */
@@ -33,7 +35,7 @@ body {
   align-items: center;
 }
 .main-img {
-  width: 350px;
+  width: 200px;
   border-radius: 12px;
   animation: moveLeft 3s infinite alternate ease-in-out;
 }
@@ -42,7 +44,7 @@ body {
   to { transform: translateX(-30px); }
 }
 
-/*/* Partie droite */
+/* Partie droite */
 .details {
   flex: 1;
   padding: 20px;
@@ -127,3 +129,70 @@ input[type="number"] {
   margin-bottom: 5px;
 }
 
+/* ----------------------- */
+/* ✅ Section autres produits */
+.more-products {
+  margin-top: 50px;
+  padding: 20px;
+  text-align: center;
+  width: 80%;
+}
+
+.more-products h2 {
+  font-size: 26px;
+  margin-bottom: 20px;
+  color: #fff;
+}
+
+/* ✅ Image en arrière-plan */
+.product-background {
+  background: url("img/background-shoes.jpghttps://i.pinimg.com/1200x/59/92/24/59922433a423be4a1af73f8321ae22a6.jpg") no-repeat center center/cover;
+  padding: 50px 20px;
+  border-radius: 16px;
+}
+
+.product-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 20px;
+}
+
+/* ✅ Card transparente */
+.product-card {
+  position: relative;
+  overflow: hidden;
+  border-radius: 10px;
+  background: transparent;
+  cursor: pointer;
+}
+
+.product-card img {
+  width: 100%;
+  display: block;
+  border-radius: 12px;
+  transition: transform 0.3s ease;
+}
+
+.product-card:hover img {
+  transform: scale(1.1);
+}
+
+/* ✅ Overlay prix */
+.product-card .overlay {
+  position: absolute;
+  inset: 0;
+  background: rgba(0,0,0,0.6);
+  color: #fff;
+  font-size: 18px;
+  font-weight: bold;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+  border-radius: 12px;
+}
+
+.product-card:hover .overlay {
+  opacity: 1;
+}

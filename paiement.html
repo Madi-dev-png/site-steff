@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Paiement par QR Code - Montre</title>
+  <style>
+    body {
+      margin: 0;
+      height: 100vh;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      overflow: hidden;
+      font-family: 'Arial', sans-serif;
+      color: white;
+      text-align: center;
+    }
+
+    /* Background animé avec une montre */
+    .background {
+      position: absolute;
+      width: 110%;
+      height: 110%;
+      top: -5%;
+      left: -5%;
+      background: url("https://i.pinimg.com/1200x/77/a6/fd/77a6fd4522ec61210f438613c5364696.jpg") no-repeat center/cover;
+      animation: moveBg 18s ease-in-out infinite alternate;
+      z-index: 1;
+      filter: blur(2px) brightness(0.6);
+    }
+
+    @keyframes moveBg {
+      0% { transform: scale(1) translate(0,0); }
+      50% { transform: scale(1.1) translate(-25px, -20px); }
+      100% { transform: scale(1) translate(0,0); }
+    }
+
+    /* Section QR */
+    .qr-section {
+      position: relative;
+      z-index: 2;
+    }
+
+    .qr-container {
+      background: rgba(255,255,255,0.95);
+      padding: 20px;
+      border-radius: 15px;
+      box-shadow: 0 8px 30px rgba(0,0,0,0.6);
+      animation: pulse 3s infinite;
+      display: inline-block;
+      margin-top: 20px;
+    }
+
+    .qr-container img {
+      width: 220px;
+      height: 220px;
+      border-radius: 10px;
+    }
+
+    @keyframes pulse {
+      0% { transform: scale(1); box-shadow: 0 0 15px rgba(0,150,255,0.6); }
+      50% { transform: scale(1.08); box-shadow: 0 0 35px rgba(0,150,255,0.9); }
+      100% { transform: scale(1); box-shadow: 0 0 15px rgba(0,150,255,0.6); }
+    }
+
+    /* Titre */
+    h1 {
+      font-size: 2rem;
+      font-weight: bold;
+      margin-bottom: 10px;
+      text-shadow: 0 0 10px rgba(0,0,0,0.8);
+    }
+
+    p {
+      font-size: 1.2rem;
+      margin-bottom: 20px;
+      text-shadow: 0 0 8px rgba(0,0,0,0.7);
+    }
+  </style>
+</head>
+<body>
+
+  <div class="background"></div>
+
+  <div class="qr-section">
+    <h1>Mode de Paiement</h1>
+    <p>Scannez le QR Code pour régler votre achat</p>
+    <div class="qr-container">
+      <img src="https://api.qrserver.com/v1/create-qr-code/?size=220x220&data=https://ton-site.com" alt="QR Code">
+    </div>
+  </div>
+
+</body>
+</html>
