@@ -487,3 +487,73 @@ body {
   position: absolute;
   left: -9999px;
 }
+.footer {
+  background: #111;
+  color: #ddd;
+  font-family: Arial, sans-serif;
+  text-align: center;
+  padding: 40px 20px 20px;
+}
+
+.footer a {
+  color: #ddd;
+  text-decoration: none;
+  transition: 0.3s;
+}
+
+.footer a:hover {
+  color: #fff;
+}
+
+.footer-socials a {
+  color: #fff;
+  display: inline-block;
+  margin: 0 10px;
+  font-size: 28px;
+  transition: transform 0.3s, color 0.3s;
+}
+
+.footer-socials a:hover {
+  transform: scale(1.2);
+}
+
+.footer-socials a .bi-whatsapp:hover { color: #25D366; }
+.footer-socials a .bi-youtube:hover { color: #FF0000; }
+.footer-socials a .bi-facebook:hover { color: #1877F2; }
+.footer-socials a .bi-instagram:hover { color: #E1306C; }
+.footer-socials a .bi-google:hover { color: #DB4437; }
+.footer-socials a .bi-linkedin:hover { color: #0077B5; }
+.footer-socials a .bi-pinterest:hover { color: #BD081C; }
+.footer-socials a .bi-twitter:hover { color: #1DA1F2; }
+
+.footer .footer-contact div {
+  font-size: 15px;
+  color: #ccc;
+  margin: 8px 0;
+}
+
+.footer .footer-contact i {
+  color: #e74c3c;
+  margin-right: 8px;
+}
+
+.footer-bottom {
+  border-top: 1px solid #333;
+  padding-top: 15px;
+  margin-top: 20px;
+  font-size: 13px;
+  color: #777;
+}
+
+@media (max-width: 576px) {
+  .footer .footer-contact div {
+    font-size: 14px;
+    display: block;
+    text-align: center;
+  }
+
+  .footer-socials a {
+    font-size: 24px;
+    margin: 0 6px;
+  }
+}
