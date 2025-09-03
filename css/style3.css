@@ -417,9 +417,12 @@ body {
 .strip {
   display: flex;
   gap: 16px;
-  overflow: auto;
+  overflow-x: auto;         /* scroll horizontal actif */
   scroll-behavior: smooth;
   padding-bottom: 10px;
+
+  scrollbar-width: none;    /* Firefox */
+  -ms-overflow-style: none; /* IE et Edge */
 }
 
 .card {
