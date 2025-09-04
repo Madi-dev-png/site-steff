@@ -1,6 +1,4 @@
-/* =========================
-   VARIABLES GLOBALES
-=========================== */
+
 :root {
   --bg: #ffffff;
   --text: #1a1a1a;
@@ -13,9 +11,6 @@
   --ring-strong: 0 20px 40px rgba(0,0,0,.13);
 }
 
-/* =========================
-   RESET GLOBAL
-=========================== */
 * {
   box-sizing: border-box;
 }
@@ -32,9 +27,7 @@ body {
   flex-direction: column;
 }
 
-/* =========================
-   TOP BAR
-=========================== */
+
 .topbar {
   display: flex;
   align-items: center;
@@ -87,9 +80,6 @@ body {
   opacity: .75;
 }
 
-/* =========================
-   LAYOUT PRINCIPAL
-=========================== */
 .wrap {
   width: min(1200px, 94vw);
   margin: 10px auto 32px;
@@ -105,9 +95,6 @@ body {
   }
 }
 
-/* =========================
-   LEFT PANEL (TEXT & INFOS)
-=========================== */
 .eyebrow {
   font-size: .78rem;
   letter-spacing: .16em;
@@ -213,9 +200,7 @@ body {
   border: 2px dashed #111;
 }
 
-/* =========================
-   RIGHT PANEL (HERO / CHAUSSURE)
-=========================== */
+
 .hero {
   position: relative;
   isolation: isolate;
@@ -259,7 +244,6 @@ body {
   to { opacity: 1; transform: translateY(0); }
 }
 
-/* Glow bar sous la chaussure */
 .glow {
   position: absolute;
   inset: auto 10% 70px 10%;
@@ -272,7 +256,7 @@ body {
   transform: skewX(-12deg);
 }
 
-/* Hotspots */
+
 .hotspot {
   position: absolute;
   width: 26px;
@@ -324,9 +308,6 @@ body {
   transform: translateY(-10px);
 }
 
-/* =========================
-   CONTROLES RAIL DROIT / MINIATURES
-=========================== */
 .rail {
   display: flex;
   align-items: center;
@@ -379,9 +360,6 @@ body {
 .navbtn:hover { transform: translateY(-2px); }
 .navbtn:active { transform: translateY(0); }
 
-/* =========================
-   SOCIAL ROW
-=========================== */
 .social {
   display: flex;
   gap: 8px;
@@ -399,9 +377,7 @@ body {
   box-shadow: var(--ring);
 }
 
-/* =========================
-   BOTTOM CAROUSEL
-=========================== */
+
 .strip-wrap {
   width: min(1200px, 94vw);
   margin: 10px auto 80px;
@@ -417,12 +393,12 @@ body {
 .strip {
   display: flex;
   gap: 16px;
-  overflow-x: auto;         /* scroll horizontal actif */
+  overflow-x: auto;         
   scroll-behavior: smooth;
   padding-bottom: 10px;
 
-  scrollbar-width: none;    /* Firefox */
-  -ms-overflow-style: none; /* IE et Edge */
+  scrollbar-width: none; 
+  -ms-overflow-style: none;
 }
 
 .card {
@@ -480,15 +456,12 @@ body {
   cursor: pointer;
 }
 
-/* =========================
-   HELPERS
-=========================== */
 .sr-only {
   position: absolute;
   left: -9999px;
 }
 .footer {
-  background: #1a1a1a; /* fond sombre */
+  background: #1a1a1a;
   color: #ddd;
   font-family: Arial, sans-serif;
   text-align: center;
@@ -505,7 +478,7 @@ body {
   color: #fff;
 }
 
-/* Réseaux sociaux */
+
 .footer-socials {
   margin-bottom: 20px;
 }
@@ -522,7 +495,7 @@ body {
   transform: scale(1.2);
 }
 
-/* Hover couleurs icônes */
+
 .footer-socials a .bi-whatsapp:hover { color: #25D366; }
 .footer-socials a .bi-youtube:hover { color: #FF0000; }
 .footer-socials a .bi-facebook:hover { color: #1877F2; }
@@ -532,7 +505,7 @@ body {
 .footer-socials a .bi-pinterest:hover { color: #BD081C; }
 .footer-socials a .bi-twitter:hover { color: #1DA1F2; }
 
-/* Texte principal */
+
 .footer-text h3 {
   color: #fff;
   margin-bottom: 10px;
@@ -545,7 +518,7 @@ body {
   margin-bottom: 20px;
 }
 
-/* Contacts */
+
 .footer-contact {
   display: flex;
   justify-content: center;
@@ -567,7 +540,7 @@ body {
   font-size: 18px;
 }
 
-/* Bas de page */
+
 .footer-bottom {
   border-top: 1px solid #333;
   padding-top: 15px;
@@ -576,7 +549,6 @@ body {
   color: #777;
 }
 
-/* Responsive */
 @media (max-width: 768px) {
   .footer-contact {
     flex-direction: column;
