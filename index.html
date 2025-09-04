@@ -45,7 +45,7 @@
                 </ul>
 
                 <div class="d-flex align-items-center gap-3 icons">
-                    <!-- Champ recherche caché -->
+                 
                     <input type="text" id="search-input" placeholder="Rechercher..."
                         style="display:none; padding:5px; border-radius:5px; border:1px solid #ccc;">
                     <i class="bi bi-search" id="search-icon" style="cursor:pointer;"></i>
@@ -60,7 +60,7 @@
         </div>
     </header>
 
-    <!-- Modale Panier -->
+   
     <div id="cart-modal"
         style="display:none; position:fixed; top:50%; left:50%; transform:translate(-50%,-50%); background:#fff; padding:20px; border-radius:10px; width:300px; z-index:2000; box-shadow:0 0 10px rgba(0,0,0,0.5);">
         <h4>Votre Panier <button id="close-cart"
@@ -129,15 +129,15 @@
     <section class="brand-showcase">
         <div class="brand-card">
             <img src="img/nike blanche.jpg" alt="Nike">
-            <a href="page.html" class="brand-btn">Je shoppe</a> <!-- Redirection vers page.html -->
+            <a href="page.html" class="brand-btn">Je shoppe</a> 
         </div>
         <div class="brand-card">
             <img src="img/puma.jpg" alt="Puma">
-            <a href="#" class="brand-btn">Je découvre</a> <!-- Pas de redirection -->
+            <a href="#" class="brand-btn">Je découvre</a> 
         </div>
         <div class="brand-card">
             <img src="img/adidas.jpg" alt="Adidas">
-            <a href="page.html" class="brand-btn">Je shoppe</a> <!-- Redirection vers page.html -->
+            <a href="page.html" class="brand-btn">Je shoppe</a> 
         </div>
 
     </section>
@@ -218,14 +218,12 @@
 
 
     <script>
-        /* ===== Utility selectors ===== */
+       
         const $ = (q, root = document) => root.querySelector(q);
         const $$ = (q, root = document) => [...root.querySelectorAll(q)];
 
-        /* ===== AOS animation ===== */
         AOS.init({ once: true, duration: 800 });
 
-        /* ===== Recherche ===== */
         const searchIcon = $("#search-icon");
         const searchInput = $("#search-input");
         let searchVisible = false;
@@ -245,14 +243,13 @@
             }
         });
 
-        /* ===== PANIER ===== */
+        
         const cartIcon = document.querySelector(".cart");
         const cartModal = document.getElementById("cart-modal");
         const closeCartBtn = document.getElementById("close-cart");
         const cartItemsList = document.getElementById("cart-items");
         const cartCount = document.getElementById("cart-count");
 
-        // Lire le panier depuis localStorage
         let cart = JSON.parse(localStorage.getItem("cartItems")) || [];
         cartCount.textContent = cart.length;
 
@@ -293,7 +290,7 @@
             cartModal.style.display = "none";
         });
 
-        /* ===== BOUTONS DES CARTES ===== */
+       
         const brandBtns = document.querySelectorAll(".brand-btn");
         brandBtns.forEach(btn => {
             btn.addEventListener("click", e => {
@@ -303,7 +300,7 @@
                     const card = btn.closest(".brand-card");
                     const name = card.querySelector("a").textContent;
                     const price = "Prix non défini";
-                    const size = "42"; // taille par défaut pour index
+                    const size = "42"; 
                     cart.push({ name, price, size });
                     localStorage.setItem("cartItems", JSON.stringify(cart));
                     updateCartCount();
