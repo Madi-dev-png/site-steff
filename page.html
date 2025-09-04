@@ -16,7 +16,6 @@
 
 <body>
 
-  <!-- TOPBAR -->
   <header class="topbar">
     <div class="brand"><span class="swoosh"></span><span>NIKE</span></div>
     <div class="icons">
@@ -41,9 +40,9 @@
     </div>
   </header>
 
-  <!-- MAIN -->
+
   <main class="wrap">
-    <!-- LEFT COPY -->
+  
     <section>
       <div class="eyebrow">Chaussure de course Homme</div>
       <h1 class="title">NIKE ZOOM PEGASUS<br>35&nbsp;TURBO</h1>
@@ -81,14 +80,14 @@
 
     </section>
 
-    <!-- RIGHT HERO -->
+ 
     <section class="hero">
       <div class="hero-inner">
         <div class="stage" id="stage">
           <img id="heroShoe" class="shoe" alt="Shoe" src="img/nike nike.jpg" />
           <div class="glow" id="glow"></div>
 
-          <!-- hotspots (positions approximées comme sur la maquette) -->
+     
           <div class="hotspot" style="top:42%; left:34%">
             <span>+</span>
             <div class="tip">Flymesh upper</div>
@@ -103,7 +102,7 @@
           </div>
         </div>
 
-        <!-- right-rail thumbnails + arrows -->
+      
         <div class="rail">
           <button class="navbtn" id="prevView" aria-label="Précédent">
             <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor">
@@ -127,7 +126,7 @@
     </section>
   </main>
 
-  <!-- BOTTOM STRIP -->
+  
   <section class="strip-wrap">
     <div class="strip-head">
       <div class="tiny">VOUS POURRIEZ AIMER</div>
@@ -146,7 +145,7 @@
     </div>
 
     <div class="strip" id="strip">
-      <!-- 6 demo cards -->
+      
       <article class="card">
         <div class="imgbox"><img src="img/38e03e533b8e7fb92f511a25d2f08fd5.jpg" alt=""></div>
         <div class="meta">
@@ -216,11 +215,11 @@
   </section>
 
   <script>
-    /* ============ Utility selectors ============ */
+    
     const $ = (q, root = document) => root.querySelector(q);
     const $$ = (q, root = document) => [...root.querySelectorAll(q)];
 
-    /* ============ Color swatches -> accent & glow ============ */
+   
     const colors = $("#colors");
     const glow = $("#glow");
     colors.addEventListener("click", e => {
@@ -235,7 +234,6 @@
       setTimeout(() => heroShoe.classList.remove("fade"), 360);
     });
 
-    /* ============ Sizes active state ============ */
     const sizes = $("#sizes");
     sizes.addEventListener("click", e => {
       const btn = e.target.closest(".size"); if (!btn) return;
@@ -245,7 +243,7 @@
       alert(`Taille ${selectedSize} sélectionnée`);
     });
 
-    /* ============ Hero thumbnails + arrows ============ */
+    
     const heroShoe = $("#heroShoe");
     const defaultViews = [
       "img/nike nike.jpg",
@@ -273,7 +271,7 @@
     $("#prevView").onclick = () => setView(idx - 1);
     $("#nextView").onclick = () => setView(idx + 1);
 
-    /* ============ Tilt / parallax on move ============ */
+   
     const stage = $("#stage");
     stage.addEventListener("mousemove", e => {
       const r = stage.getBoundingClientRect();
@@ -283,12 +281,11 @@
     });
     stage.addEventListener("mouseleave", () => heroShoe.style.transform = "");
 
-    /* ============ Bottom strip arrows ============ */
     const strip = $("#strip");
     $("#leftStrip").onclick = () => strip.scrollBy({ left: -320, behavior: "smooth" });
     $("#rightStrip").onclick = () => strip.scrollBy({ left: 320, behavior: "smooth" });
 
-    /* ============ Vous pourriez aimer -> change hero, miniatures + texte ============ */
+    
     const likeCards = $$(".strip .card");
     const titleEl = $(".title");
     const descEl = $(".desc");
@@ -308,7 +305,7 @@
       });
     });
 
-    // Taille active
+    
     let selectedSize = $(".size.active")?.textContent || "42";
     sizesBtns = $$(".size", sizes);
     sizes.addEventListener("click", e => {
@@ -319,38 +316,36 @@
       alert(`Taille ${selectedSize} sélectionnée`);
     });
 
-    /* ============ Ajouter au panier ============ */
     $("#addCart").addEventListener("click", e => {
       if (!selectedSize) {
         alert("Veuillez sélectionner une taille avant d'ajouter au panier.");
         return;
       }
-      // Micro-animation
+  
       const b = e.currentTarget;
       b.animate([{ transform: "translateY(0)" }, { transform: "translateY(-3px)" }, { transform: "translateY(0)" }], { duration: 260 });
 
-      // Ajout au compteur localStorage
+      
       let cartCount = parseInt(localStorage.getItem("cartCount")) || 0;
       cartCount++;
       localStorage.setItem("cartCount", cartCount);
 
       alert(`Produit "${titleEl.textContent}" ajouté au panier\nTaille : ${selectedSize}`);
     });
-    // Ajouter au panier
+    
     $("#addCart").addEventListener("click", e => {
       if (!selectedSize) {
         alert("Veuillez sélectionner une taille avant d'ajouter au panier.");
         return;
       }
 
-      // Micro-animation
+
       const b = e.currentTarget;
       b.animate([{ transform: "translateY(0)" }, { transform: "translateY(-3px)" }, { transform: "translateY(0)" }], { duration: 260 });
 
-      // Lire panier existant depuis localStorage
       let cart = JSON.parse(localStorage.getItem("cartItems")) || [];
 
-      // Ajouter le produit
+      
       const product = {
         name: titleEl.textContent,
         price: priceEl.textContent,
@@ -358,7 +353,7 @@
       };
       cart.push(product);
 
-      // Sauvegarder dans localStorage
+    
       localStorage.setItem("cartItems", JSON.stringify(cart));
 
       alert(`Produit "${product.name}" ajouté au panier\nTaille : ${selectedSize}`);
@@ -366,7 +361,7 @@
 
   </script>
 
-  <!-- Bouton retour à l'accueil -->
+
   <div style="text-align:center; margin:40px 0;">
     <a href="index.html" style="display:inline-block; padding:12px 24px; background:#000; color:#fff; 
             font-weight:600; border-radius:8px; text-decoration:none; 
@@ -374,9 +369,9 @@
       Retour à l'accueil
     </a>
   </div>
-  <!-- FOOTER -->
+ 
   <footer class="footer">
-    <!-- Réseaux sociaux -->
+    
     <div class="footer-socials">
       <a href="#"><i class="bi bi-linkedin"></i></a>
       <a href="#"><i class="bi bi-youtube"></i></a>
@@ -387,20 +382,19 @@
       <a href="#"><i class="bi bi-google"></i></a>
     </div>
 
-    <!-- Texte principal -->
     <div class="footer-text">
       <h3><strong>Nous sommes basés à Abidjan, Côte d'Ivoire.</strong></h3>
       <p>Nous travaillons avec des clients partout. Contactez-nous dès maintenant !</p>
     </div>
 
-    <!-- Contacts -->
+
     <div class="footer-contact">
       <div><i class="bi bi-envelope-fill"></i> info@saizoboutique.com</div>
       <div><i class="bi bi-telephone-fill"></i> (+225) 01 51 73 63 24</div>
       <div><i class="bi bi-geo-alt-fill"></i> SAIZO Boutique, Cocody, Abidjan</div>
     </div>
 
-    <!-- Bas de page -->
+    
     <div class="footer-bottom">
       © 2025 SAIZO BOUTIQUE. Tous droits réservés.
     </div>
