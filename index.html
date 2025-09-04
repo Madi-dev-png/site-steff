@@ -17,41 +17,55 @@
 
     <!-- Votre CSS personnalisé -->
     <link rel="stylesheet" href="css/style.css" />
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600&display=swap" rel="stylesheet">
+
 </head>
 
 <body>
 
 
+    <header class="navbar navbar-expand-lg fixed-top bg-white bg-opacity-75 shadow-sm" data-aos="fade-down"
+        data-aos-duration="1000">
+        <div class="container-fluid px-4">
 
-    <header class="header navbar navbar-expand-lg navbar-dark bg-dark" data-aos="fade-down" data-aos-duration="1000">
-        <div class="container-fluid">
-            <a class="navbar-brand" href="#">
-        <img src="img/Red Abstract Fire Letter A Logo.png" alt="Saizo Boutique" class="logo-img">
-    </a>
+            <!-- Logo -->
+            <a class="navbar-brand d-flex align-items-center fw-bold text-primary logo" href="#">
+                <img src="img/Red Abstract Fire Letter A Logo.png" alt="Saizo Boutique" width="28" class="me-2">
 
-            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarResponsive"
-                aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
+            </a>
+
+            <!-- Bouton Hamburger -->
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
+                aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
             </button>
 
-            <div class="collapse navbar-collapse" id="navbarResponsive">
-                <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
-                    <li class="nav-item"><a class="nav-link" href="#">HOMMES</a></li>
-                    <li class="nav-item"><a class="nav-link" href="#">FEMMES</a></li>
-                    <li class="nav-item"><a class="nav-link" href="#">ENFANTS</a></li>
-                    <li class="nav-item"><a class="nav-link" href="">ACCESSOIRES</a></li>
+            <!-- Navigation -->
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav mx-auto nav-links">
+                    <li class="nav-item"><a class="nav-link active" href="#">Home</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#">Shop</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#">Pages</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#">About</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#">Blog</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#">Contact</a></li>
                 </ul>
 
-                <div class="d-flex align-items-center ms-lg-3">
-                    <input type="text" id="search-input" placeholder="Rechercher un article..."
-                        class="form-control form-control-sm me-2" />
-                    <i class="bi bi-search text-white" id="search-icon"></i>
-                    <i class="bi bi-person text-white ms-3"></i>
-                    <i class="bi bi-cart text-white ms-3"></i>
+                <!-- Icônes -->
+                <div class="d-flex align-items-center gap-3 icons">
+                    <i class="bi bi-search"></i>
+                    <i class="bi bi-heart"></i>
+                    <div class="cart">
+                        <i class="bi bi-cart"></i>
+                        <span>2</span>
+                    </div>
                 </div>
             </div>
+
         </div>
     </header>
+
 
 
 
@@ -108,7 +122,7 @@
 
 
 
-     <h2 class="brand-title">Nos Collections de Chaussures</h2>
+    <h2 class="brand-title">Nos Collections de Chaussures</h2>
     <section class="brand-showcase">
         <div class="brand-card">
             <img src="img/nike blanche.jpg" alt="Skechers">
@@ -124,74 +138,74 @@
         </div>
     </section>
     <section class="new-birkenstock">
-  <div class="container">
-    <div class="text">
-      <h2>New in : BIRKENSTOCK</h2>
-      <p>Redécouvrez les iconiques de la marque</p>
-      <a href="#" class="btn-discover">Je découvre</a>
-    </div>
-    <div class="image">
-      <img src="img/BannerTextLeft_HPG_sept.webp" alt="Sandales Birkenstock">
-    </div>
-  </div>
-</section>
+        <div class="container">
+            <div class="text">
+                <h2>New in : BIRKENSTOCK</h2>
+                <p>Redécouvrez les iconiques de la marque</p>
+                <a href="#" class="btn-discover">Je découvre</a>
+            </div>
+            <div class="image">
+                <img src="img/BannerTextLeft_HPG_sept.webp" alt="Sandales Birkenstock">
+            </div>
+        </div>
+    </section>
 
-<section class="brand-showcase">
-  <div class="brand-card">
-    <img src="img/chaine 1.jpg" alt="Chaîne en or">
-    <a href="#" class="brand-btn">Je découvre</a>
-  </div>
-  <div class="brand-card">
-    <img src="img/chaine 2.jpg" alt="Chaîne en argent">
-    <a href="#" class="brand-btn">Je shoppe</a>
-  </div>
-  <div class="brand-card">
-    <img src="img/chaine 4.jpg" alt="Chaîne en acier inoxydable">
-    <a href="#" class="brand-btn">Voir les détails</a>
-  </div>
-</section>
+    <section class="brand-showcase">
+        <div class="brand-card">
+            <img src="img/chaine 1.jpg" alt="Chaîne en or">
+            <a href="#" class="brand-btn">Je découvre</a>
+        </div>
+        <div class="brand-card">
+            <img src="img/chaine 2.jpg" alt="Chaîne en argent">
+            <a href="#" class="brand-btn">Je shoppe</a>
+        </div>
+        <div class="brand-card">
+            <img src="img/chaine 4.jpg" alt="Chaîne en acier inoxydable">
+            <a href="#" class="brand-btn">Voir les détails</a>
+        </div>
+    </section>
 
 
 
-  <footer class="footer bg-dark text-light py-5">
-  <div class="container text-center">
-    <!-- RÉSEAUX SOCIAUX -->
-    <div class="footer-socials mb-4">
-      <a href="#"><i class="bi bi-linkedin fs-3 mx-2"></i></a>
-      <a href="#"><i class="bi bi-youtube fs-3 mx-2"></i></a>
-      <a href="#"><i class="bi bi-facebook fs-3 mx-2"></i></a>
-      <a href="#"><i class="bi bi-pinterest fs-3 mx-2"></i></a>
-      <a href="#"><i class="bi bi-twitter fs-3 mx-2"></i></a>
-      <a href="#"><i class="bi bi-instagram fs-3 mx-2"></i></a>
-      <a href="#"><i class="bi bi-google fs-3 mx-2"></i></a>
-    </div>
+    <footer class="footer bg-dark text-light py-5">
+        <div class="container text-center">
+            <!-- RÉSEAUX SOCIAUX -->
+            <div class="footer-socials mb-4">
+                <a href="#"><i class="bi bi-linkedin fs-3 mx-2"></i></a>
+                <a href="#"><i class="bi bi-youtube fs-3 mx-2"></i></a>
+                <a href="#"><i class="bi bi-facebook fs-3 mx-2"></i></a>
+                <a href="#"><i class="bi bi-pinterest fs-3 mx-2"></i></a>
+                <a href="#"><i class="bi bi-twitter fs-3 mx-2"></i></a>
+                <a href="#"><i class="bi bi-instagram fs-3 mx-2"></i></a>
+                <a href="#"><i class="bi bi-google fs-3 mx-2"></i></a>
+            </div>
 
-    <!-- TEXTE CENTRAL -->
-    <p class="lead fw-semibold">Nous sommes basés à Abidjan, Côte d'Ivoire.</p>
-    <p class="mb-4">Nous travaillons avec des clients partout. Contactez-nous dès maintenant !</p>
+            <!-- TEXTE CENTRAL -->
+            <p class="lead fw-semibold">Nous sommes basés à Abidjan, Côte d'Ivoire.</p>
+            <p class="mb-4">Nous travaillons avec des clients partout. Contactez-nous dès maintenant !</p>
 
-    <!-- INFOS CONTACT -->
-    <div class="row justify-content-center text-center mb-4">
-      <div class="col-md-4 mb-3">
-        <i class="bi bi-envelope-fill me-2"></i>
-        <a href="mailto:info@saizoboutique.com" class="text-light">info@saizoboutique.com</a>
-      </div>
-      <div class="col-md-4 mb-3">
-        <i class="bi bi-telephone-fill me-2"></i>
-        <span>(+225) 01 51 73 63 24</span>
-      </div>
-      <div class="col-md-4 mb-3">
-        <i class="bi bi-geo-alt-fill me-2"></i>
-        <span>SAIZO Boutique, Cocody, Abidjan</span>
-      </div>
-    </div>
+            <!-- INFOS CONTACT -->
+            <div class="row justify-content-center text-center mb-4">
+                <div class="col-md-4 mb-3">
+                    <i class="bi bi-envelope-fill me-2"></i>
+                    <a href="mailto:info@saizoboutique.com" class="text-light">info@saizoboutique.com</a>
+                </div>
+                <div class="col-md-4 mb-3">
+                    <i class="bi bi-telephone-fill me-2"></i>
+                    <span>(+225) 01 51 73 63 24</span>
+                </div>
+                <div class="col-md-4 mb-3">
+                    <i class="bi bi-geo-alt-fill me-2"></i>
+                    <span>SAIZO Boutique, Cocody, Abidjan</span>
+                </div>
+            </div>
 
-    <!-- COPYRIGHT -->
-    <div class="footer-bottom small text-secondary">
-      &copy; 2025 SAIZO BOUTIQUE. Tous droits réservés.
-    </div>
-  </div>
-</footer>
+            <!-- COPYRIGHT -->
+            <div class="footer-bottom small text-secondary">
+                &copy; 2025 SAIZO BOUTIQUE. Tous droits réservés.
+            </div>
+        </div>
+    </footer>
 
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
@@ -200,170 +214,170 @@
 
 
     <script>
-    // Initialisation AOS pour les animations
-    AOS.init({ once: true, duration: 800 });
+        // Initialisation AOS pour les animations
+        AOS.init({ once: true, duration: 800 });
 
-    // --- TITRES SPÉCIAUX SELON LA DATE ---
-    const holidays = {
-        "01-01": { title: "Bonne année 2026", subtitle: "Jour de l'An" },
-        "07-08": { title: "Bonne fête de l'Indépendance", subtitle: "Fête Nationale" },
-        "01-05": { title: "Bonne fête du Travail", subtitle: "Fête du Travail" },
-        "25-12": { title: "Joyeux Noël", subtitle: "Fête de Noël" }
-    };
+        // --- TITRES SPÉCIAUX SELON LA DATE ---
+        const holidays = {
+            "01-01": { title: "Bonne année 2026", subtitle: "Jour de l'An" },
+            "07-08": { title: "Bonne fête de l'Indépendance", subtitle: "Fête Nationale" },
+            "01-05": { title: "Bonne fête du Travail", subtitle: "Fête du Travail" },
+            "25-12": { title: "Joyeux Noël", subtitle: "Fête de Noël" }
+        };
 
-    const today = new Date();
-    const todayStr = today.toISOString().slice(5, 10); // MM-JJ
+        const today = new Date();
+        const todayStr = today.toISOString().slice(5, 10); // MM-JJ
 
-    // Sélection des éléments <h4> et <h1> de la vidéo
-    const videoH4 = document.querySelector(".video-caption h4");
-    const videoH1 = document.querySelector(".video-caption h1");
+        // Sélection des éléments <h4> et <h1> de la vidéo
+        const videoH4 = document.querySelector(".video-caption h4");
+        const videoH1 = document.querySelector(".video-caption h1");
 
-    // Mise à jour du texte selon la date
-    if (holidays[todayStr]) {
-        videoH4.textContent = holidays[todayStr].title;
-        videoH1.textContent = holidays[todayStr].subtitle;
-        createConfetti(); // Confettis pour les jours spéciaux
-    } else {
-        videoH4.textContent = "DÉCOUVRE LA NOUVELLE COLLECTION";
-        videoH1.textContent = "CHAUSSURES ET ACCESSOIRES SPORT";
-    }
-
-    // --- CONFETTIS ---
-    function createConfetti() {
-        const confettiContainer = document.createElement("div");
-        confettiContainer.id = "confetti-container";
-        confettiContainer.style.position = "absolute";
-        confettiContainer.style.top = "0";
-        confettiContainer.style.left = "0";
-        confettiContainer.style.width = "100%";
-        confettiContainer.style.height = "100%";
-        confettiContainer.style.pointerEvents = "none";
-        confettiContainer.style.overflow = "hidden";
-        document.body.appendChild(confettiContainer);
-
-        for (let i = 0; i < 150; i++) {
-            const confetti = document.createElement("div");
-            confetti.style.position = "absolute";
-            confetti.style.width = "10px";
-            confetti.style.height = "10px";
-            confetti.style.backgroundColor = `hsl(${Math.random() * 360}, 100%, 50%)`;
-            confetti.style.top = "-10px";
-            confetti.style.left = `${Math.random() * 100}%`;
-            confetti.style.opacity = Math.random();
-            confetti.style.transform = `rotate(${Math.random() * 360}deg)`;
-            confettiContainer.appendChild(confetti);
-            animateConfetti(confetti);
+        // Mise à jour du texte selon la date
+        if (holidays[todayStr]) {
+            videoH4.textContent = holidays[todayStr].title;
+            videoH1.textContent = holidays[todayStr].subtitle;
+            createConfetti(); // Confettis pour les jours spéciaux
+        } else {
+            videoH4.textContent = "DÉCOUVRE LA NOUVELLE COLLECTION";
+            videoH1.textContent = "CHAUSSURES ET ACCESSOIRES SPORT";
         }
-    }
 
-    function animateConfetti(confetti) {
-        const fallDuration = Math.random() * 3 + 2;
-        confetti.animate(
-            [
-                { transform: confetti.style.transform + " translateY(0px)" },
-                { transform: confetti.style.transform + ` translateY(${window.innerHeight + 20}px)` }
-            ],
-            {
-                duration: fallDuration * 1000,
-                iterations: Infinity,
-                delay: Math.random() * 2000
+        // --- CONFETTIS ---
+        function createConfetti() {
+            const confettiContainer = document.createElement("div");
+            confettiContainer.id = "confetti-container";
+            confettiContainer.style.position = "absolute";
+            confettiContainer.style.top = "0";
+            confettiContainer.style.left = "0";
+            confettiContainer.style.width = "100%";
+            confettiContainer.style.height = "100%";
+            confettiContainer.style.pointerEvents = "none";
+            confettiContainer.style.overflow = "hidden";
+            document.body.appendChild(confettiContainer);
+
+            for (let i = 0; i < 150; i++) {
+                const confetti = document.createElement("div");
+                confetti.style.position = "absolute";
+                confetti.style.width = "10px";
+                confetti.style.height = "10px";
+                confetti.style.backgroundColor = `hsl(${Math.random() * 360}, 100%, 50%)`;
+                confetti.style.top = "-10px";
+                confetti.style.left = `${Math.random() * 100}%`;
+                confetti.style.opacity = Math.random();
+                confetti.style.transform = `rotate(${Math.random() * 360}deg)`;
+                confettiContainer.appendChild(confetti);
+                animateConfetti(confetti);
             }
-        );
-    }
+        }
 
-    // --- RECHERCHE DYNAMIQUE ---
-    const searchIcon = document.getElementById("search-icon");
-    const searchInput = document.getElementById("search-input");
-    let searchVisible = false;
+        function animateConfetti(confetti) {
+            const fallDuration = Math.random() * 3 + 2;
+            confetti.animate(
+                [
+                    { transform: confetti.style.transform + " translateY(0px)" },
+                    { transform: confetti.style.transform + ` translateY(${window.innerHeight + 20}px)` }
+                ],
+                {
+                    duration: fallDuration * 1000,
+                    iterations: Infinity,
+                    delay: Math.random() * 2000
+                }
+            );
+        }
 
-    searchIcon.addEventListener("click", function () {
-        if (!searchVisible) {
-            searchInput.style.display = "block";
-            searchInput.focus();
-            searchVisible = true;
-        } else {
-            const searchTerm = searchInput.value.toLowerCase();
-            const items = document.querySelectorAll(".item, .category-item");
-            items.forEach((item) => {
-                const text = item.textContent.toLowerCase();
-                item.style.display = text.includes(searchTerm) ? "block" : "none";
+        // --- RECHERCHE DYNAMIQUE ---
+        const searchIcon = document.getElementById("search-icon");
+        const searchInput = document.getElementById("search-input");
+        let searchVisible = false;
+
+        searchIcon.addEventListener("click", function () {
+            if (!searchVisible) {
+                searchInput.style.display = "block";
+                searchInput.focus();
+                searchVisible = true;
+            } else {
+                const searchTerm = searchInput.value.toLowerCase();
+                const items = document.querySelectorAll(".item, .category-item");
+                items.forEach((item) => {
+                    const text = item.textContent.toLowerCase();
+                    item.style.display = text.includes(searchTerm) ? "block" : "none";
+                });
+            }
+        });
+
+        // --- PANIER ---
+        const cartIcon = document.querySelector(".bi-cart");
+        const cartModal = document.getElementById("cart-modal");
+        const closeCartBtn = document.getElementById("close-cart");
+        const cartItemsList = document.getElementById("cart-items");
+        let cart = [];
+
+        function displayCart() {
+            cartItemsList.innerHTML = "";
+            if (cart.length === 0) {
+                cartItemsList.innerHTML = "<li>Votre panier est vide.</li>";
+            } else {
+                cart.forEach((item) => {
+                    const li = document.createElement("li");
+                    li.textContent = `${item.name} — ${item.price}`;
+                    cartItemsList.appendChild(li);
+                });
+            }
+        }
+
+        cartIcon.addEventListener("click", () => {
+            displayCart();
+            cartModal.classList.add("active");
+        });
+
+        closeCartBtn.addEventListener("click", () => {
+            cartModal.classList.remove("active");
+        });
+
+        // --- BOUTONS ACHAT ---
+        const buyButtonsCategory = document.querySelectorAll(".buy-btn-category");
+        buyButtonsCategory.forEach((button) => {
+            button.addEventListener("click", (e) => {
+                e.preventDefault();
+                const itemElem = button.closest(".category-item");
+                const name = itemElem.querySelector("p").textContent.trim() || "Article";
+                const price = itemElem.querySelector("span").textContent.trim() || "";
+                cart.push({ name, price });
+                alert(`${name} a été ajouté au panier.`);
+                sendWhatsAppMessage(name, price);
+            });
+        });
+
+        function sendWhatsAppMessage(itemName, itemPrice) {
+            const phoneNumber = "2250151736324";
+            const message = `Bonjour, je souhaite commander : ${itemName} au prix de ${itemPrice}. Merci !`;
+            const url = `https://wa.me/${phoneNumber}?text=${encodeURIComponent(message)}`;
+            window.open(url, "_blank");
+        }
+
+        // --- MODAL À PROPOS ---
+        const openAboutBtn = document.getElementById("open-about");
+        const aboutModal = document.getElementById("about-modal");
+        const closeAboutBtn = document.getElementById("close-about");
+
+        if (openAboutBtn) {
+            openAboutBtn.addEventListener("click", (e) => {
+                e.preventDefault();
+                aboutModal.style.display = "block";
             });
         }
-    });
 
-    // --- PANIER ---
-    const cartIcon = document.querySelector(".bi-cart");
-    const cartModal = document.getElementById("cart-modal");
-    const closeCartBtn = document.getElementById("close-cart");
-    const cartItemsList = document.getElementById("cart-items");
-    let cart = [];
-
-    function displayCart() {
-        cartItemsList.innerHTML = "";
-        if (cart.length === 0) {
-            cartItemsList.innerHTML = "<li>Votre panier est vide.</li>";
-        } else {
-            cart.forEach((item) => {
-                const li = document.createElement("li");
-                li.textContent = `${item.name} — ${item.price}`;
-                cartItemsList.appendChild(li);
-            });
-        }
-    }
-
-    cartIcon.addEventListener("click", () => {
-        displayCart();
-        cartModal.classList.add("active");
-    });
-
-    closeCartBtn.addEventListener("click", () => {
-        cartModal.classList.remove("active");
-    });
-
-    // --- BOUTONS ACHAT ---
-    const buyButtonsCategory = document.querySelectorAll(".buy-btn-category");
-    buyButtonsCategory.forEach((button) => {
-        button.addEventListener("click", (e) => {
-            e.preventDefault();
-            const itemElem = button.closest(".category-item");
-            const name = itemElem.querySelector("p").textContent.trim() || "Article";
-            const price = itemElem.querySelector("span").textContent.trim() || "";
-            cart.push({ name, price });
-            alert(`${name} a été ajouté au panier.`);
-            sendWhatsAppMessage(name, price);
-        });
-    });
-
-    function sendWhatsAppMessage(itemName, itemPrice) {
-        const phoneNumber = "2250151736324";
-        const message = `Bonjour, je souhaite commander : ${itemName} au prix de ${itemPrice}. Merci !`;
-        const url = `https://wa.me/${phoneNumber}?text=${encodeURIComponent(message)}`;
-        window.open(url, "_blank");
-    }
-
-    // --- MODAL À PROPOS ---
-    const openAboutBtn = document.getElementById("open-about");
-    const aboutModal = document.getElementById("about-modal");
-    const closeAboutBtn = document.getElementById("close-about");
-
-    if(openAboutBtn){
-        openAboutBtn.addEventListener("click", (e) => {
-            e.preventDefault();
-            aboutModal.style.display = "block";
-        });
-    }
-
-    closeAboutBtn.addEventListener("click", () => {
-        aboutModal.style.display = "none";
-    });
-
-    window.addEventListener("click", (e) => {
-        if (e.target === aboutModal) {
+        closeAboutBtn.addEventListener("click", () => {
             aboutModal.style.display = "none";
-        }
-    });
+        });
 
-</script>
+        window.addEventListener("click", (e) => {
+            if (e.target === aboutModal) {
+                aboutModal.style.display = "none";
+            }
+        });
+
+    </script>
 
 </body>
 
