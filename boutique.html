@@ -20,9 +20,9 @@ html, body {
   background: #fff;
 }
 
-/* ======= HEADER (transparent + flouté) ======= */
+
 .topbar {
-  background: rgba(255,255,255,0); /* totalement transparent */
+  background: rgba(255,255,255,0);
   backdrop-filter: blur(12px);
   -webkit-backdrop-filter: blur(12px);
   position: sticky;
@@ -32,7 +32,7 @@ html, body {
   align-items: center;
   justify-content: space-between;
   padding: 12px 18px;
-  border-bottom: none; /* ou 1px rgba si tu veux léger contour */
+  border-bottom: none; 
 }
 .topbar-left {
   display: flex;
@@ -86,7 +86,7 @@ html, body {
   background: rgba(0,0,0,0.12);
 }
 
-/* ======= NAV BAR FLOTTANT DROITE ======= */
+
 .navbar {
   position: fixed;
   top: 100px;
@@ -119,14 +119,13 @@ html, body {
   transform: translateX(-4px);
 }
 
-/* ======= WRAPPER ======= */
 .wrap {
   max-width: 1200px;
   margin: 16px auto;
   padding: 0 16px;
 }
 
-/* ======= BARRE D'ACTION (tri) ======= */
+
 .actions {
   display: flex;
   justify-content: flex-end;
@@ -155,7 +154,7 @@ select {
   pointer-events: none;
 }
 
-/* ======= GRID PRODUITS ======= */
+
 .grid {
   display: grid;
   grid-template-columns: repeat(5, 1fr);
@@ -213,7 +212,7 @@ select {
   margin-top: 6px;
 }
 
-/* Badge "En solde" */
+
 .ribbon {
   position: absolute;
   right: -6px;
@@ -235,7 +234,7 @@ select {
   box-shadow: 0 6px 12px rgba(0,0,0,.2);
 }
 
-/* ======= BOUTONS FLOTTANTS (WhatsApp + Cadeau) ======= */
+
 .fab {
   position: fixed;
   z-index: 60;
@@ -277,7 +276,7 @@ select {
   display: block;
 }
 
-/* ======= MENU LATÉRAL MOBILE ======= */
+
 .drawer {
   position: fixed;
   inset: 0;
@@ -318,7 +317,7 @@ select {
   </style>
 </head>
 <body>
-  <!-- ====== TOP BAR ====== -->
+
 <header class="topbar">
   <div class="topbar-left">
     <button class="burger" id="openMenu" aria-label="Ouvrir le menu">
@@ -339,21 +338,20 @@ select {
   </div>
 </header>
 
-<!-- ====== NAV BAR FLOTTANT DROITE ====== -->
+
 <nav class="navbar">
   <a class="navlink" href="#">ACCUEIL</a>
   <a class="navlink" href="#">CONVERSE</a>
   <a class="navlink" href="#">NIKE</a>
   <a class="navlink active" href="#">ADIDAS</a>
-  <a class="navlink" href="#">BENSIMON</a>
-  <a class="navlink" href="#">GODDAXFOOT</a>
-  <a class="navlink" href="#">JUMPMAN</a>
+    <a class="navlink" href="#">REEBOK</a>
   <a class="navlink" href="#">NEW BALANCE</a>
   <a class="navlink" href="#">AUTRY</a>
+   <a class="navlink" href="#">BENSIMON</a>
   <a class="navlink" href="#">SALOMON</a>
   <a class="navlink" href="#">FILA</a>
   <a class="navlink" href="#">ASICS</a>
-  <a class="navlink" href="#">REEBOK</a>
+  <a class="navlink" href="#">JUMPMAN</a>
 </nav>
 
 <main class="wrap">
@@ -369,7 +367,7 @@ select {
   </div>
 
   <section class="grid" id="grid">
-    <!-- ==== PRODUITS avec images === -->
+
     <article class="card" data-price="129900" data-name="Adidas Samba OG">
       <div class="thumb"><img src="img/13582630_23447316_1000_360x.webp" alt="Samba OG"></div>
       <div class="info">
@@ -484,7 +482,7 @@ select {
   </section>
 </main>
 
-<!-- ====== BOUTONS FLOTTANTS ====== -->
+
 <a class="fab whatsapp" href="https://wa.me/2250151736324" target="_blank" aria-label="Service Client WhatsApp">
   <i class="bi bi-whatsapp" style="font-size:26px"></i>
   <span>Service Client</span>
@@ -493,7 +491,7 @@ select {
   <i class="bi bi-gift" style="font-size:24px"></i>
 </button>
 
-<!-- ====== DRAWER MOBILE ====== -->
+
 <div class="drawer" id="drawer" aria-hidden="true">
   <aside class="panel" role="dialog" aria-label="Menu">
     <h3>Catégories</h3>
@@ -512,9 +510,10 @@ select {
 </div>
 
 <script>
-  // ===== Tri =====
   const grid = document.getElementById('grid');
   const sortSelect = document.getElementById('sort');
+
+
   sortSelect.addEventListener('change', () => {
     const cards = Array.from(grid.querySelectorAll('.card'));
     const mode = sortSelect.value;
@@ -527,11 +526,82 @@ select {
     cards.forEach(c=>grid.appendChild(c));
   });
 
-  // ===== Drawer Mobile =====
+
   const drawer = document.getElementById('drawer');
   document.getElementById('openMenu').onclick = ()=> drawer.classList.add('open');
   document.getElementById('closeMenu').onclick = ()=> drawer.classList.remove('open');
   drawer.addEventListener('click', e=>{ if(e.target===drawer) drawer.classList.remove('open'); });
+
+  
+  const products = {
+    "Adidas": [
+      {name:"Adidas Samba OG", price:129900, desc:"Cuir • Semelle gomme", img:"img/13582630_23447316_1000_360x.webp", promo:true},
+      {name:"Adidas Campus 00s", price:99900, desc:"Suède • Confort quotidien", img:"img/13678919_23445098_1000_360x.webp"},
+      {name:"Adidas Handball Spezial", price:159900, desc:"Look rétro", img:"img/14527715_22320375_1000_360x.webp", promo:true},
+      {name:"Adidas VL Court", price:89900, desc:"Légère & casual", img:"img/18514915_39989405_1000_360x.webp"},
+      {name:"Yeezy Boost 700", price:189900, desc:"Amorti Boost", img:"img/21071473_51067033_1000_360x.webp", promo:true},
+      {name:"Adidas Gazelle", price:139900, desc:"Icône vintage", img:"img/22206163_47712622_1000_360x.webp"},
+      {name:"Adidas Forum Low", price:119900, desc:"Basket héritage", img:"img/22206164_47711850_1000_360x.webp"},
+      {name:"Adidas Duramo", price:94900, desc:"Running daily", img:"img/23193818_53278028_1000_360x.webp"},
+      {name:"Adidas UltraBoost", price:209900, desc:"Performance & confort", img:"img/30455291_59902824_1000_360x.webp", promo:true},
+      {name:"Adidas Lite Racer", price:79900, desc:"Respirante", img:"img/16548992_32180006_1000_360x.webp"},
+      {name:"Adidas NMD R1", price:169900, desc:"Style urbain", img:"img/16548992_32180006_1000_360x.webp"},
+      {name:"Adidas Courtmaster", price:114900, desc:"Classique", img:"img/22362124_52344707_1000_360x.webp"}
+    ],
+    "Salomon": [
+  {name:"Salomon XT-6", price:189900, desc:"Trail running légendaire", img:"img/23896983_53918386_1000_360x.webp", promo:true},
+  {name:"Salomon Speedcross 5", price:159900, desc:"Accroche tout terrain", img:"img/26582799_57180064_1000_360x.webp"},
+  {name:"Salomon Sense Ride 4", price:139900, desc:"Confort & amorti", img:"img/26962411_57177518_1000_360x.webp"},
+  {name:"Salomon XA Pro 3D", price:149900, desc:"Polyvalence & stabilité", img:"img/27362444_57233190_1000_360x.webp"},
+  {name:"Salomon Supercross Blast", price:134900, desc:"Accroche boue & sentiers", img:"img/28700011_57943214_1000_360x.webp"},
+  {name:"Salomon Alphacross 4", price:119900, desc:"Usage quotidien & trail léger", img:"img/29742321_59010061_1000_360x.webp"},
+  {name:"Salomon Predict Soc 2", price:169900, desc:"Running urbain dynamique", img:"img/29791134_58917555_1000_360x.webp"},
+  {name:"Salomon S/Lab Ultra 3", price:209900, desc:"Endurance & ultra-trail", img:"img/slab_ultra3.webp", promo:true},
+  {name:"Salomon Pulsar Trail", price:159900, desc:"Rapidité & réactivité", img:"img/pulsar_trail.webp"},
+  {name:"Salomon Wildcross", price:149900, desc:"Accroche agressive terrain gras", img:"img/wildcross.webp"},
+  {name:"Salomon Cross Hike Mid GTX", price:189900, desc:"Randonnée imperméable", img:"img/cross_hike_gtx.webp"},
+  {name:"Salomon Outpulse", price:139900, desc:"Confort de marche & amorti", img:"img/outpulse.webp"}
+],
+
+  };
+
+  function renderProducts(brand) {
+    grid.innerHTML = "";
+    if (!products[brand]) return;
+    products[brand].forEach(p=>{
+      const article = document.createElement("article");
+      article.className = "card";
+      article.dataset.price = p.price;
+      article.dataset.name = p.name;
+
+      article.innerHTML = `
+        <div class="thumb"><img src="${p.img}" alt="${p.name}"></div>
+        <div class="info">
+          <div class="title">${p.name}</div>
+          <div class="muted">${p.desc}</div>
+          <div class="price">${p.price.toLocaleString()} F</div>
+        </div>
+        ${p.promo ? `<div class="ribbon"><span>En solde</span></div>` : ""}
+      `;
+      grid.appendChild(article);
+    });
+  }
+
+  // ========= NAVBAR MARQUES =========
+  document.querySelectorAll('.navlink').forEach(link=>{
+    link.addEventListener('click', e=>{
+      e.preventDefault();
+      document.querySelectorAll('.navlink').forEach(l=>l.classList.remove('active'));
+      link.classList.add('active');
+      const brand = link.textContent.trim().toUpperCase();
+      const key = Object.keys(products).find(k => k.toUpperCase()===brand);
+      if (key) renderProducts(key);
+    });
+  });
+
+  // ========= AFFICHAGE PAR DÉFAUT =========
+  renderProducts("Adidas");
 </script>
+
 </body>
 </html>
