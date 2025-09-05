@@ -1,103 +1,555 @@
 <!DOCTYPE html>
 <html lang="fr">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Saizo Boutique - 24 Articles</title>
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
-    <style>
-        body {
-            font-family: Arial, sans-serif;
-            background-color: #f5f5f5;
-            margin: 0;
-            padding: 0;
-        }
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Boutique Sneakers — Catalogue</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css">
+  <style>
+* {
+  box-sizing: border-box;
+}
 
-        .items-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
-            gap: 20px;
-            padding: 40px;
-        }
+html, body {
+  height: 100%;
+  margin: 0;
+ font-family: 'Poppins', sans-serif;
+  color: var(--text);
+  background: #fff;
+}
 
-        .item {
-            position: relative;
-            overflow: hidden;
-            border-radius: 10px;
-            cursor: pointer;
-        }
+/* ======= HEADER (rouge) ======= */
+.topbar {
+  background: var(--red);
+  color: #fff;
+  padding: 12px 18px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  position: sticky;
+  top: 0;
+  z-index: 50;
+}
 
-        .item img {
-            width: 100%;
-            height: 200px;
-            object-fit: cover;
-            display: block;
-            transition: transform 0.3s ease;
-        }
+.topbar-left {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
 
-        .item:hover img {
-            transform: scale(1.1);
-        }
+.burger {
+  width: 36px;
+  height: 36px;
+  display: grid;
+  place-items: center;
+  border-radius: 10px;
+  cursor: pointer;
+}
 
-        .price-overlay {
-            position: absolute;
-            bottom: 0;
-            left: 0;
-            width: 100%;
-            text-align: center;
-            background: rgba(0,0,0,0.6);
-            color: #fff;
-            padding: 10px 0;
-            font-weight: bold;
-            font-size: 16px;
-            opacity: 0;
-            transition: opacity 0.3s ease;
-        }
+.burger i {
+  font-size: 22px;
+  opacity: 0.9;
+}
 
-        .item:hover .price-overlay {
-            opacity: 1;
-        }
+.brandmark {
+  display: grid;
+  place-items: center;
+  width: 36px;
+  height: 36px;
+  border: 2px solid rgba(255,255,255,.55);
+  color: #fff;
+  border-radius: 999px;
+  font-weight: 800;
+}
 
-        @media (hover: none) {
-            .price-overlay {
-                opacity: 1;
-            }
-        }
-    </style>
+.topbar-right {
+  display: flex;
+  align-items: center;      /* centre verticalement */
+  gap: 14px;
+}
+
+.topbar-right .icon {
+  width: 36px;
+  height: 36px;
+  display: flex;            /* flex pour alignement parfait */
+  align-items: center;      /* centre verticalement */
+  justify-content: center;  /* centre horizontalement */
+  border-radius: 10px;
+  background: rgba(255,255,255,.12);
+}
+
+/* ======= NAV BAR (noire) ======= */
+.navbar {
+  background: var(--nav);
+  color: #fff;
+  display: flex;
+  gap: 24px;
+  align-items: center;
+  overflow: auto;
+  white-space: nowrap;
+  padding: 12px 14px;
+  border-top: 1px solid rgba(255,255,255,.08);
+}
+
+.navlink {
+  color: #fff;
+  text-decoration: none;
+  font-weight: 800;
+  letter-spacing: 0.06em;
+  padding: 8px 10px;
+  border-radius: 6px;
+}
+
+.navlink:hover,
+.navlink.active {
+  background: rgba(255,255,255,.08);
+}
+
+/* ======= WRAPPER ======= */
+.wrap {
+  max-width: 1200px;
+  margin: 16px auto;
+  padding: 0 16px;
+}
+
+/* ======= BARRE D'ACTION (tri) ======= */
+.actions {
+  display: flex;
+  justify-content: flex-end;
+  margin: 10px 0 18px;
+}
+
+.select {
+  position: relative;
+}
+
+select {
+  appearance: none;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  padding: 12px 42px 12px 12px;
+  border: 1px solid #ddd;
+  border-radius: 10px;
+  font-weight: 600;
+}
+
+.select i {
+  position: absolute;
+  right: 12px;
+  top: 50%;
+  transform: translateY(-50%);
+  pointer-events: none;
+}
+
+/* ======= GRID PRODUITS ======= */
+.grid {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  gap: 24px;
+}
+
+@media (max-width: 1100px) {
+  .grid { grid-template-columns: repeat(4, 1fr); }
+}
+
+@media (max-width: 900px) {
+  .grid { grid-template-columns: repeat(3, 1fr); }
+}
+
+@media (max-width: 680px) {
+  .grid { grid-template-columns: repeat(2, 1fr); }
+}
+
+@media (max-width: 420px) {
+  .grid { grid-template-columns: 1fr; }
+}
+
+.card {
+  background: var(--card);
+  border: 1px solid #eee;
+  border-radius: 16px;
+  overflow: hidden;
+  box-shadow: var(--ring);
+  position: relative;
+}
+
+.thumb {
+  display: grid;
+  place-items: center;
+  height: 160px;
+  background: #fafafa;
+}
+
+.thumb img {
+  max-width: 95%;
+  max-height: 140px;
+  transition: .3s;
+}
+
+.card:hover .thumb img {
+  transform: scale(1.05);
+}
+
+.info {
+  padding: 12px;
+}
+
+.title {
+  font-weight: 800;
+  font-size: .95rem;
+  line-height: 1.2;
+}
+
+.muted {
+  color: var(--muted);
+  font-size: .86rem;
+}
+
+.price {
+  font-weight: 800;
+  margin-top: 6px;
+}
+
+/* Badge "En solde" */
+.ribbon {
+  position: absolute;
+  right: -6px;
+  top: 14px;
+  width: 110px;
+  height: 110px;
+  overflow: hidden;
+}
+
+.ribbon span {
+  position: absolute;
+  transform: rotate(45deg);
+  background: #b52a2a;
+  color: #fff;
+  padding: 6px 40px;
+  top: 24px;
+  right: -34px;
+  font-weight: 800;
+  box-shadow: 0 6px 12px rgba(0,0,0,.2);
+}
+
+/* ======= BOUTONS FLOTTANTS (WhatsApp + Cadeau) ======= */
+.fab {
+  position: fixed;
+  z-index: 60;
+  display: grid;
+  place-items: center;
+  width: 56px;
+  height: 56px;
+  border-radius: 999px;
+  color: #fff;
+  box-shadow: 0 10px 20px rgba(0,0,0,.25);
+}
+
+.fab.whatsapp {
+  left: 16px;
+  bottom: 18px;
+  background: #25D366;
+}
+
+.fab.gift {
+  right: 16px;
+  bottom: 18px;
+  background: #b71c1c;
+}
+
+.fab span {
+  position: absolute;
+  left: 64px;
+  white-space: nowrap;
+  background: #fff;
+  color: #111;
+  padding: 8px 10px;
+  border-radius: 10px;
+  font-weight: 600;
+  box-shadow: var(--ring);
+  display: none;
+}
+
+.fab:hover span {
+  display: block;
+}
+
+/* ======= MENU LATÉRAL MOBILE ======= */
+.drawer {
+  position: fixed;
+  inset: 0;
+  background: rgba(0,0,0,.4);
+  display: none;
+}
+
+.drawer.open {
+  display: block;
+}
+
+.panel {
+  position: absolute;
+  left: 0;
+  top: 0;
+  bottom: 0;
+  width: 280px;
+  background: #fff;
+  box-shadow: var(--ring-strong);
+  padding: 16px;
+}
+
+.panel h3 {
+  margin: 0 0 12px;
+}
+
+.panel a {
+  display: block;
+  padding: 10px;
+  color: #111;
+  text-decoration: none;
+  border-radius: 8px;
+}
+
+.panel a:hover {
+  background: #f5f5f5;
+}
+
+  </style>
 </head>
 <body>
+  <!-- ====== TOP BAR ====== -->
+  <!-- ====== TOP BAR ====== -->
+<header class="topbar" style="background: rgba(255,255,255,0.8); backdrop-filter: blur(12px); -webkit-backdrop-filter: blur(12px); color:#0073e6;">
+  <div class="topbar-left">
+    <button class="burger" id="openMenu" aria-label="Ouvrir le menu">
+      <i class="bi bi-list" style="color:#000000"></i>
+    </button>
+    <strong style="color:#070708">BOUTIQUE</strong>
+  </div>
+  <div class="brandmark" style="border-color: rgba(15, 18, 21, 0.55); color:#0b0d0f;">S</div>
+  
+  <!-- ====== NOUVELLES ICONES ====== -->
+  <div class="d-flex align-items-center gap-3 icons" style="color:#000000;">
+    <input type="text" id="search-input" placeholder="Rechercher..."
+        style="display:none; padding:5px; border-radius:5px; border:1px solid #ccc;">
+    <i class="bi bi-search" id="search-icon" style="cursor:pointer;"></i>
+    <i class="bi bi-heart"></i>
+    <div class="cart" id="cart-icon" style="position:relative; cursor:pointer;">
+        <i class="bi bi-cart"></i>
+        <span id="cart-count"
+            style="position:absolute; top:-5px; right:-10px; background:red; color:white; font-size:12px; padding:2px 6px; border-radius:50%;">0</span>
+    </div>
+  </div>
+</header>
+<!-- ====== NAV BAR ====== -->
+<nav class="navbar" style="background: #000; backdrop-filter: blur(12px); -webkit-backdrop-filter: blur(12px);">
+  <a class="navlink" href="#" style="color:#fff;">ACCUEIL</a>
+  <a class="navlink" href="#" style="color:#fff;">CONVERSE</a>
+  <a class="navlink" href="#" style="color:#fff;">NIKE</a>
+  <a class="navlink active" href="#" style="color:#fff;">ADIDAS</a>
+  <a class="navlink" href="#" style="color:#fff;">BENSIMON</a>
+  <a class="navlink" href="#" style="color:#fff;">GODDAXFOOT</a>
+  <a class="navlink" href="#" style="color:#fff;">JUMPMAN</a>
+  <a class="navlink" href="#" style="color:#fff;">NEW BALANCE</a>
+  <a class="navlink" href="#" style="color:#fff;">AUTRY</a>
+  <a class="navlink" href="#" style="color:#fff;">SALOMON</a>
+  <a class="navlink" href="#" style="color:#fff;">FILA</a>
+  <a class="navlink" href="#" style="color:#fff;">ASICS</a>
+  <a class="navlink" href="#" style="color:#fff;">REEBOK</a>
+</nav>
 
-<section class="items-grid">
-    <div class="item"><img src="img/image1.jpg" alt="Article 1"><div class="price-overlay">12 000 FCFA</div></div>
-    <div class="item"><img src="img/image2.jpg" alt="Article 2"><div class="price-overlay">8 000 FCFA</div></div>
-    <div class="item"><img src="img/image3.jpg" alt="Article 3"><div class="price-overlay">15 000 FCFA</div></div>
-    <div class="item"><img src="img/image4.jpg" alt="Article 4"><div class="price-overlay">9 000 FCFA</div></div>
-    <div class="item"><img src="img/image5.jpg" alt="Article 5"><div class="price-overlay">20 000 FCFA</div></div>
-    <div class="item"><img src="img/image6.jpg" alt="Article 6"><div class="price-overlay">18 000 FCFA</div></div>
-    <div class="item"><img src="img/image7.jpg" alt="Article 7"><div class="price-overlay">25 000 FCFA</div></div>
-    <div class="item"><img src="img/image8.jpg" alt="Article 8"><div class="price-overlay">30 000 FCFA</div></div>
-    <div class="item"><img src="img/image9.jpg" alt="Article 9"><div class="price-overlay">14 000 FCFA</div></div>
-    <div class="item"><img src="img/image10.jpg" alt="Article 10"><div class="price-overlay">16 000 FCFA</div></div>
-    <div class="item"><img src="img/image11.jpg" alt="Article 11"><div class="price-overlay">22 000 FCFA</div></div>
-    <div class="item"><img src="img/image12.jpg" alt="Article 12"><div class="price-overlay">19 000 FCFA</div></div>
-    <div class="item"><img src="img/image13.jpg" alt="Article 13"><div class="price-overlay">17 000 FCFA</div></div>
-    <div class="item"><img src="img/image14.jpg" alt="Article 14"><div class="price-overlay">21 000 FCFA</div></div>
-    <div class="item"><img src="img/image15.jpg" alt="Article 15"><div class="price-overlay">26 000 FCFA</div></div>
-    <div class="item"><img src="img/image16.jpg" alt="Article 16"><div class="price-overlay">24 000 FCFA</div></div>
-    <div class="item"><img src="img/image17.jpg" alt="Article 17"><div class="price-overlay">28 000 FCFA</div></div>
-    <div class="item"><img src="img/image18.jpg" alt="Article 18"><div class="price-overlay">23 000 FCFA</div></div>
-    <div class="item"><img src="img/image19.jpg" alt="Article 19"><div class="price-overlay">12 500 FCFA</div></div>
-    <div class="item"><img src="img/image20.jpg" alt="Article 20"><div class="price-overlay">13 500 FCFA</div></div>
-    <div class="item"><img src="img/image21.jpg" alt="Article 21"><div class="price-overlay">27 000 FCFA</div></div>
-    <div class="item"><img src="img/image22.jpg" alt="Article 22"><div class="price-overlay">29 000 FCFA</div></div>
-    <div class="item"><img src="img/image23.jpg" alt="Article 23"><div class="price-overlay">11 000 FCFA</div></div>
-    <div class="item"><img src="img/image24.jpg" alt="Article 24"><div class="price-overlay">15 500 FCFA</div></div>
-    <div class="item"><img src="img/image24.jpg" alt="Article 24"><div class="price-overlay">15 500 FCFA</div></div>
-    <div class="item"><img src="img/image24.jpg" alt="Article 24"><div class="price-overlay">15 500 FCFA</div></div>
-    <div class="item"><img src="img/image24.jpg" alt="Article 24"><div class="price-overlay">15 500 FCFA</div></div>
-    <div class="item"><img src="img/image24.jpg" alt="Article 24"><div class="price-overlay">15 500 FCFA</div></div>
 
-</section>
+  <main class="wrap">
+    <!-- ====== ACTIONS (TRI) ====== -->
+    <div class="actions">
+      <label class="select">
+        <select id="sort">
+          <option value="desc">Prix: élevé à faible</option>
+          <option value="asc">Prix: faible à élevé</option>
+          <option value="name">Nom: A → Z</option>
+        </select>
+        <i class="bi bi-chevron-down"></i>
+      </label>
+    </div>
 
+    <!-- ====== GRID PRODUITS ====== -->
+    <section class="grid" id="grid">
+      <!-- Carte produit (x12). Remplace les src par tes images -->
+      <!-- 1 -->
+      <article class="card" data-price="129900" data-name="Adidas Samba OG">
+        <div class="thumb"><img src="" alt="Samba OG"></div>
+        <div class="info">
+          <div class="title">Adidas Samba OG</div>
+          <div class="muted">Cuir • Semelle gomme</div>
+          <div class="price">129 900 F</div>
+        </div>
+        <div class="ribbon"><span>En solde</span></div>
+      </article>
+
+      <!-- 2 -->
+      <article class="card" data-price="99900" data-name="Adidas Campus 00s">
+        <div class="thumb"><img src="" alt="Campus 00s"></div>
+        <div class="info">
+          <div class="title">Adidas Campus 00s</div>
+          <div class="muted">Suède • Confort quotidien</div>
+          <div class="price">99 900 F</div>
+        </div>
+      </article>
+
+      <!-- 3 -->
+      <article class="card" data-price="159900" data-name="Adidas Handball Spezial">
+        <div class="thumb"><img src="" alt="Spezial"></div>
+        <div class="info">
+          <div class="title">Adidas Handball Spezial</div>
+          <div class="muted">Look rétro</div>
+          <div class="price">159 900 F</div>
+        </div>
+        <div class="ribbon"><span>En solde</span></div>
+      </article>
+
+      <!-- 4 -->
+      <article class="card" data-price="89900" data-name="Adidas VL Court">
+        <div class="thumb"><img src="" alt="VL Court"></div>
+        <div class="info">
+          <div class="title">Adidas VL Court</div>
+          <div class="muted">Légère & casual</div>
+          <div class="price">89 900 F</div>
+        </div>
+      </article>
+
+      <!-- 5 -->
+      <article class="card" data-price="189900" data-name="Yeezy Boost 700">
+        <div class="thumb"><img src="" alt="Yeezy 700"></div>
+        <div class="info">
+          <div class="title">Yeezy Boost 700</div>
+          <div class="muted">Amorti Boost</div>
+          <div class="price">189 900 F</div>
+        </div>
+        <div class="ribbon"><span>En solde</span></div>
+      </article>
+
+      <!-- 6 -->
+      <article class="card" data-price="139900" data-name="Adidas Gazelle">
+        <div class="thumb"><img src="" alt="Gazelle"></div>
+        <div class="info">
+          <div class="title">Adidas Gazelle</div>
+          <div class="muted">Icône vintage</div>
+          <div class="price">139 900 F</div>
+        </div>
+      </article>
+
+      <!-- 7 -->
+      <article class="card" data-price="119900" data-name="Adidas Forum Low">
+        <div class="thumb"><img src="" alt="Forum Low"></div>
+        <div class="info">
+          <div class="title">Adidas Forum Low</div>
+          <div class="muted">Basket héritage</div>
+          <div class="price">119 900 F</div>
+        </div>
+      </article>
+
+      <!-- 8 -->
+      <article class="card" data-price="94900" data-name="Adidas Duramo">
+        <div class="thumb"><img src="" alt="Duramo"></div>
+        <div class="info">
+          <div class="title">Adidas Duramo</div>
+          <div class="muted">Running daily</div>
+          <div class="price">94 900 F</div>
+        </div>
+      </article>
+
+      <!-- 9 -->
+      <article class="card" data-price="209900" data-name="Adidas UltraBoost">
+        <div class="thumb"><img src="" alt="UltraBoost"></div>
+        <div class="info">
+          <div class="title">Adidas UltraBoost</div>
+          <div class="muted">Performance & confort</div>
+          <div class="price">209 900 F</div>
+        </div>
+        <div class="ribbon"><span>En solde</span></div>
+      </article>
+
+      <!-- 10 -->
+      <article class="card" data-price="79900" data-name="Adidas Lite Racer">
+        <div class="thumb"><img src="" alt="Lite Racer"></div>
+        <div class="info">
+          <div class="title">Adidas Lite Racer</div>
+          <div class="muted">Respirante</div>
+          <div class="price">79 900 F</div>
+        </div>
+      </article>
+
+      <!-- 11 -->
+      <article class="card" data-price="169900" data-name="Adidas NMD R1">
+        <div class="thumb"><img src="" alt="NMD R1"></div>
+        <div class="info">
+          <div class="title">Adidas NMD R1</div>
+          <div class="muted">Style urbain</div>
+          <div class="price">169 900 F</div>
+        </div>
+      </article>
+
+      <!-- 12 -->
+      <article class="card" data-price="114900" data-name="Adidas Courtmaster">
+        <div class="thumb"><img src="" alt="Courtmaster"></div>
+        <div class="info">
+          <div class="title">Adidas Courtmaster</div>
+          <div class="muted">Classique</div>
+          <div class="price">114 900 F</div>
+        </div>
+      </article>
+    </section>
+  </main>
+
+  <!-- ====== BOUTONS FLOTTANTS ====== -->
+  <a class="fab whatsapp" href="https://wa.me/2250151736324" target="_blank" aria-label="Service Client WhatsApp">
+    <i class="bi bi-whatsapp" style="font-size:26px"></i>
+    <span>Service Client</span>
+  </a>
+  <button class="fab gift" aria-label="Cadeau / Promo">
+    <i class="bi bi-gift" style="font-size:24px"></i>
+  </button>
+
+  <!-- ====== DRAWER MOBILE ====== -->
+  <div class="drawer" id="drawer" aria-hidden="true">
+    <aside class="panel" role="dialog" aria-label="Menu">
+      <h3>Catégories</h3>
+      <a href="#">Accueil</a>
+      <a href="#">Converse</a>
+      <a href="#">Nike</a>
+      <a href="#" class="active">Adidas</a>
+      <a href="#">New Balance</a>
+      <a href="#">Salomon</a>
+      <a href="#">Fila</a>
+      <a href="#">Asics</a>
+      <a href="#">Reebok</a>
+      <br>
+      <button id="closeMenu" style="padding:10px 12px; border:1px solid #ddd; border-radius:8px; background:#f8f8f8; cursor:pointer">Fermer</button>
+    </aside>
+  </div>
+
+  <script>
+    // ===== Tri =====
+    const grid = document.getElementById('grid');
+    const sortSelect = document.getElementById('sort');
+    sortSelect.addEventListener('change', () => {
+      const cards = Array.from(grid.querySelectorAll('.card'));
+      const mode = sortSelect.value;
+      cards.sort((a,b)=>{
+        if(mode==='asc') return (+a.dataset.price) - (+b.dataset.price);
+        if(mode==='desc') return (+b.dataset.price) - (+a.dataset.price);
+        if(mode==='name') return a.dataset.name.localeCompare(b.dataset.name);
+        return 0;
+      });
+      cards.forEach(c=>grid.appendChild(c));
+    });
+
+    // ===== Drawer Mobile =====
+    const drawer = document.getElementById('drawer');
+    document.getElementById('openMenu').onclick = ()=> drawer.classList.add('open');
+    document.getElementById('closeMenu').onclick = ()=> drawer.classList.remove('open');
+    drawer.addEventListener('click', e=>{ if(e.target===drawer) drawer.classList.remove('open'); });
+  </script>
 </body>
 </html>
