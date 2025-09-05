@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+<!DOCTYPE html> 
 <html lang="fr">
 <head>
   <meta charset="UTF-8" />
@@ -15,15 +15,17 @@
 html, body {
   height: 100%;
   margin: 0;
- font-family: 'Poppins', sans-serif;
+  font-family: 'Poppins', sans-serif;
   color: var(--text);
   background: #fff;
 }
 
-/* ======= HEADER (rouge) ======= */
+/* ======= HEADER (transparent + flouté) ======= */
 .topbar {
-  background: var(--red);
-  color: #fff;
+  background: rgba(255,255,255,0.85);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  color: #0a0b0c;
   padding: 12px 18px;
   display: flex;
   align-items: center;
@@ -31,6 +33,8 @@ html, body {
   position: sticky;
   top: 0;
   z-index: 50;
+  border-bottom: 1px solid rgba(0,0,0,0.05);
+  border-radius: 0 0 12px 12px;
 }
 
 .topbar-left {
@@ -46,65 +50,76 @@ html, body {
   place-items: center;
   border-radius: 10px;
   cursor: pointer;
+  background: rgba(0,0,0,0.05);
+  transition: background 0.3s;
 }
 
-.burger i {
-  font-size: 22px;
-  opacity: 0.9;
-}
+.burger:hover { background: rgba(0,0,0,0.12); }
 
 .brandmark {
   display: grid;
   place-items: center;
   width: 36px;
   height: 36px;
-  border: 2px solid rgba(255,255,255,.55);
-  color: #fff;
+  border: 2px solid rgba(15, 18, 21, 0.55);
+  color: #0b0d0f;
   border-radius: 999px;
   font-weight: 800;
 }
 
 .topbar-right {
   display: flex;
-  align-items: center;      /* centre verticalement */
+  align-items: center;
   gap: 14px;
 }
 
 .topbar-right .icon {
   width: 36px;
   height: 36px;
-  display: flex;            /* flex pour alignement parfait */
-  align-items: center;      /* centre verticalement */
-  justify-content: center;  /* centre horizontalement */
+  display: flex;
+  align-items: center;
+  justify-content: center;
   border-radius: 10px;
-  background: rgba(255,255,255,.12);
+  background: rgba(0,0,0,0.05);
+  cursor: pointer;
+  transition: background 0.3s;
 }
 
-/* ======= NAV BAR (noire) ======= */
+.topbar-right .icon:hover {
+  background: rgba(0,0,0,0.12);
+}
+
+/* ======= NAV BAR FLOTTANT DROITE ======= */
 .navbar {
-  background: var(--nav);
+  position: fixed;
+  top: 100px;
+  right: 20px;
+  background: rgba(15, 18, 21, 0.95);
   color: #fff;
   display: flex;
-  gap: 24px;
-  align-items: center;
-  overflow: auto;
-  white-space: nowrap;
-  padding: 12px 14px;
-  border-top: 1px solid rgba(255,255,255,.08);
+  flex-direction: column;
+  gap: 12px;
+  padding: 16px 20px;
+  border-radius: 16px;
+  box-shadow: 0 8px 24px rgba(0,0,0,0.25);
+  z-index: 1000;
+  max-width: 180px;
 }
 
 .navlink {
   color: #fff;
   text-decoration: none;
-  font-weight: 800;
-  letter-spacing: 0.06em;
-  padding: 8px 10px;
-  border-radius: 6px;
+  font-weight: 600;
+  padding: 8px 12px;
+  border-radius: 8px;
+  transition: all 0.3s;
 }
 
 .navlink:hover,
 .navlink.active {
-  background: rgba(255,255,255,.08);
+  background: #ff2d8b;
+  color: #fff;
+  transform: translateX(-4px);
 }
 
 /* ======= WRAPPER ======= */
@@ -150,21 +165,10 @@ select {
   gap: 24px;
 }
 
-@media (max-width: 1100px) {
-  .grid { grid-template-columns: repeat(4, 1fr); }
-}
-
-@media (max-width: 900px) {
-  .grid { grid-template-columns: repeat(3, 1fr); }
-}
-
-@media (max-width: 680px) {
-  .grid { grid-template-columns: repeat(2, 1fr); }
-}
-
-@media (max-width: 420px) {
-  .grid { grid-template-columns: 1fr; }
-}
+@media (max-width: 1100px) { .grid { grid-template-columns: repeat(4, 1fr); } }
+@media (max-width: 900px) { .grid { grid-template-columns: repeat(3, 1fr); } }
+@media (max-width: 680px) { .grid { grid-template-columns: repeat(2, 1fr); } }
+@media (max-width: 420px) { .grid { grid-template-columns: 1fr; } }
 
 .card {
   background: var(--card);
@@ -314,243 +318,223 @@ select {
 .panel a:hover {
   background: #f5f5f5;
 }
-
   </style>
 </head>
 <body>
   <!-- ====== TOP BAR ====== -->
-  <!-- ====== TOP BAR ====== -->
-<header class="topbar" style="background: rgba(255,255,255,0.8); backdrop-filter: blur(12px); -webkit-backdrop-filter: blur(12px); color:#0a0b0c;">
+<header class="topbar">
   <div class="topbar-left">
     <button class="burger" id="openMenu" aria-label="Ouvrir le menu">
       <i class="bi bi-list" style="color:#000000"></i>
     </button>
-    <strong style="color:#070708">BOUTIQUE</strong>
+    <strong>BOUTIQUE</strong>
   </div>
-  <div class="brandmark" style="border-color: rgba(15, 18, 21, 0.55); color:#0b0d0f;">S</div>
+  <div class="brandmark">S</div>
   
-  <!-- ====== NOUVELLES ICONES ====== -->
-  <div class="d-flex align-items-center gap-3 icons" style="color:#000000;">
-    <input type="text" id="search-input" placeholder="Rechercher..."
-        style="display:none; padding:5px; border-radius:5px; border:1px solid #ccc;">
+  <div class="topbar-right icons">
+    <input type="text" id="search-input" placeholder="Rechercher..." style="display:none; padding:5px; border-radius:5px; border:1px solid #ccc;">
     <i class="bi bi-search" id="search-icon" style="cursor:pointer;"></i>
     <i class="bi bi-heart"></i>
     <div class="cart" id="cart-icon" style="position:relative; cursor:pointer;">
         <i class="bi bi-cart"></i>
-        <span id="cart-count"
-            style="position:absolute; top:-5px; right:-10px; background:red; color:white; font-size:12px; padding:2px 6px; border-radius:50%;">0</span>
+        <span id="cart-count" style="position:absolute; top:-5px; right:-10px; background:red; color:white; font-size:12px; padding:2px 6px; border-radius:50%;">0</span>
     </div>
   </div>
 </header>
-<!-- ====== NAV BAR ====== -->
-<nav class="navbar" style="background: #000; backdrop-filter: blur(12px); -webkit-backdrop-filter: blur(12px);">
-  <a class="navlink" href="#" style="color:#fff;">ACCUEIL</a>
-  <a class="navlink" href="#" style="color:#fff;">CONVERSE</a>
-  <a class="navlink" href="#" style="color:#fff;">NIKE</a>
-  <a class="navlink active" href="#" style="color:#fff;">ADIDAS</a>
-  <a class="navlink" href="#" style="color:#fff;">BENSIMON</a>
-  <a class="navlink" href="#" style="color:#fff;">GODDAXFOOT</a>
-  <a class="navlink" href="#" style="color:#fff;">JUMPMAN</a>
-  <a class="navlink" href="#" style="color:#fff;">NEW BALANCE</a>
-  <a class="navlink" href="#" style="color:#fff;">AUTRY</a>
-  <a class="navlink" href="#" style="color:#fff;">SALOMON</a>
-  <a class="navlink" href="#" style="color:#fff;">FILA</a>
-  <a class="navlink" href="#" style="color:#fff;">ASICS</a>
-  <a class="navlink" href="#" style="color:#fff;">REEBOK</a>
+
+<!-- ====== NAV BAR FLOTTANT DROITE ====== -->
+<nav class="navbar">
+  <a class="navlink" href="#">ACCUEIL</a>
+  <a class="navlink" href="#">CONVERSE</a>
+  <a class="navlink" href="#">NIKE</a>
+  <a class="navlink active" href="#">ADIDAS</a>
+  <a class="navlink" href="#">BENSIMON</a>
+  <a class="navlink" href="#">GODDAXFOOT</a>
+  <a class="navlink" href="#">JUMPMAN</a>
+  <a class="navlink" href="#">NEW BALANCE</a>
+  <a class="navlink" href="#">AUTRY</a>
+  <a class="navlink" href="#">SALOMON</a>
+  <a class="navlink" href="#">FILA</a>
+  <a class="navlink" href="#">ASICS</a>
+  <a class="navlink" href="#">REEBOK</a>
 </nav>
 
-
-  <main class="wrap">
-    <!-- ====== ACTIONS (TRI) ====== -->
-    <div class="actions">
-      <label class="select">
-        <select id="sort">
-          <option value="desc">Prix: élevé à faible</option>
-          <option value="asc">Prix: faible à élevé</option>
-          <option value="name">Nom: A → Z</option>
-        </select>
-        <i class="bi bi-chevron-down"></i>
-      </label>
-    </div>
-
-    <!-- ====== GRID PRODUITS ====== -->
-    <section class="grid" id="grid">
-      <!-- Carte produit (x12). Remplace les src par tes images -->
-      <!-- 1 -->
-      <article class="card" data-price="129900" data-name="Adidas Samba OG">
-        <div class="thumb"><img src="img/13582630_23447316_1000_360x.webp" alt="Samba OG"></div>
-        <div class="info">
-          <div class="title">Adidas Samba OG</div>
-          <div class="muted">Cuir • Semelle gomme</div>
-          <div class="price">129 900 F</div>
-        </div>
-        <div class="ribbon"><span>En solde</span></div>
-      </article>
-
-      <!-- 2 -->
-      <article class="card" data-price="99900" data-name="Adidas Campus 00s">
-        <div class="thumb"><img src="img/13678919_23445098_1000_360x.webp" alt="Campus 00s"></div>
-        <div class="info">
-          <div class="title">Adidas Campus 00s</div>
-          <div class="muted">Suède • Confort quotidien</div>
-          <div class="price">99 900 F</div>
-        </div>
-      </article>
-
-      <!-- 3 -->
-      <article class="card" data-price="159900" data-name="Adidas Handball Spezial">
-        <div class="thumb"><img src="img/14527715_22320375_1000_360x.webp" alt="Spezial"></div>
-        <div class="info">
-          <div class="title">Adidas Handball Spezial</div>
-          <div class="muted">Look rétro</div>
-          <div class="price">159 900 F</div>
-        </div>
-        <div class="ribbon"><span>En solde</span></div>
-      </article>
-
-      <!-- 4 -->
-      <article class="card" data-price="89900" data-name="Adidas VL Court">
-        <div class="thumb"><img src="img/18514915_39989405_1000_360x.webp" alt="VL Court"></div>
-        <div class="info">
-          <div class="title">Adidas VL Court</div>
-          <div class="muted">Légère & casual</div>
-          <div class="price">89 900 F</div>
-        </div>
-      </article>
-
-      <!-- 5 -->
-      <article class="card" data-price="189900" data-name="Yeezy Boost 700">
-        <div class="thumb"><img src="img/21071473_51067033_1000_360x.webp" alt="Yeezy 700"></div>
-        <div class="info">
-          <div class="title">Yeezy Boost 700</div>
-          <div class="muted">Amorti Boost</div>
-          <div class="price">189 900 F</div>
-        </div>
-        <div class="ribbon"><span>En solde</span></div>
-      </article>
-
-      <!-- 6 -->
-      <article class="card" data-price="139900" data-name="Adidas Gazelle">
-        <div class="thumb"><img src="img/22206163_47712622_1000_360x.webp" alt="Gazelle"></div>
-        <div class="info">
-          <div class="title">Adidas Gazelle</div>
-          <div class="muted">Icône vintage</div>
-          <div class="price">139 900 F</div>
-        </div>
-      </article>
-
-      <!-- 7 -->
-      <article class="card" data-price="119900" data-name="Adidas Forum Low">
-        <div class="thumb"><img src="img/22206164_47711850_1000_360x.webp" alt="Forum Low"></div>
-        <div class="info">
-          <div class="title">Adidas Forum Low</div>
-          <div class="muted">Basket héritage</div>
-          <div class="price">119 900 F</div>
-        </div>
-      </article>
-
-      <!-- 8 -->
-      <article class="card" data-price="94900" data-name="Adidas Duramo">
-        <div class="thumb"><img src="img/23193818_53278028_1000_360x.webp" alt="Duramo"></div>
-        <div class="info">
-          <div class="title">Adidas Duramo</div>
-          <div class="muted">Running daily</div>
-          <div class="price">94 900 F</div>
-        </div>
-      </article>
-
-      <!-- 9 -->
-      <article class="card" data-price="209900" data-name="Adidas UltraBoost">
-        <div class="thumb"><img src="img/30455291_59902824_1000_360x.webp" alt="UltraBoost"></div>
-        <div class="info">
-          <div class="title">Adidas UltraBoost</div>
-          <div class="muted">Performance & confort</div>
-          <div class="price">209 900 F</div>
-        </div>
-        <div class="ribbon"><span>En solde</span></div>
-      </article>
-
-      <!-- 10 -->
-      <article class="card" data-price="79900" data-name="Adidas Lite Racer">
-        <div class="thumb"><img src="img/16548992_32180006_1000_360x.webp" alt="Lite Racer"></div>
-        <div class="info">
-          <div class="title">Adidas Lite Racer</div>
-          <div class="muted">Respirante</div>
-          <div class="price">79 900 F</div>
-        </div>
-      </article>
-
-      <!-- 11 -->
-      <article class="card" data-price="169900" data-name="Adidas NMD R1">
-        <div class="thumb"><img src="img/16548992_32180006_1000_360x.webp" alt="NMD R1"></div>
-        <div class="info">
-          <div class="title">Adidas NMD R1</div>
-          <div class="muted">Style urbain</div>
-          <div class="price">169 900 F</div>
-        </div>
-      </article>
-
-      <!-- 12 -->
-      <article class="card" data-price="114900" data-name="Adidas Courtmaster">
-        <div class="thumb"><img src="img/22362124_52344707_1000_360x.webp" alt="Courtmaster"></div>
-        <div class="info">
-          <div class="title">Adidas Courtmaster</div>
-          <div class="muted">Classique</div>
-          <div class="price">114 900 F</div>
-        </div>
-      </article>
-    </section>
-  </main>
-
-  <!-- ====== BOUTONS FLOTTANTS ====== -->
-  <a class="fab whatsapp" href="https://wa.me/2250151736324" target="_blank" aria-label="Service Client WhatsApp">
-    <i class="bi bi-whatsapp" style="font-size:26px"></i>
-    <span>Service Client</span>
-  </a>
-  <button class="fab gift" aria-label="Cadeau / Promo">
-    <i class="bi bi-gift" style="font-size:24px"></i>
-  </button>
-
-  <!-- ====== DRAWER MOBILE ====== -->
-  <div class="drawer" id="drawer" aria-hidden="true">
-    <aside class="panel" role="dialog" aria-label="Menu">
-      <h3>Catégories</h3>
-      <a href="#">Accueil</a>
-      <a href="#">Converse</a>
-      <a href="#">Nike</a>
-      <a href="#" class="active">Adidas</a>
-      <a href="#">New Balance</a>
-      <a href="#">Salomon</a>
-      <a href="#">Fila</a>
-      <a href="#">Asics</a>
-      <a href="#">Reebok</a>
-      <br>
-      <button id="closeMenu" style="padding:10px 12px; border:1px solid #ddd; border-radius:8px; background:#f8f8f8; cursor:pointer">Fermer</button>
-    </aside>
+<main class="wrap">
+  <div class="actions">
+    <label class="select">
+      <select id="sort">
+        <option value="desc">Prix: élevé à faible</option>
+        <option value="asc">Prix: faible à élevé</option>
+        <option value="name">Nom: A → Z</option>
+      </select>
+      <i class="bi bi-chevron-down"></i>
+    </label>
   </div>
-  
 
-  <script>
-    // ===== Tri =====
-    const grid = document.getElementById('grid');
-    const sortSelect = document.getElementById('sort');
-    sortSelect.addEventListener('change', () => {
-      const cards = Array.from(grid.querySelectorAll('.card'));
-      const mode = sortSelect.value;
-      cards.sort((a,b)=>{
-        if(mode==='asc') return (+a.dataset.price) - (+b.dataset.price);
-        if(mode==='desc') return (+b.dataset.price) - (+a.dataset.price);
-        if(mode==='name') return a.dataset.name.localeCompare(b.dataset.name);
-        return 0;
-      });
-      cards.forEach(c=>grid.appendChild(c));
+  <section class="grid" id="grid">
+    <!-- ==== PRODUITS avec images === -->
+    <article class="card" data-price="129900" data-name="Adidas Samba OG">
+      <div class="thumb"><img src="img/13582630_23447316_1000_360x.webp" alt="Samba OG"></div>
+      <div class="info">
+        <div class="title">Adidas Samba OG</div>
+        <div class="muted">Cuir • Semelle gomme</div>
+        <div class="price">129 900 F</div>
+      </div>
+      <div class="ribbon"><span>En solde</span></div>
+    </article>
+
+    <article class="card" data-price="99900" data-name="Adidas Campus 00s">
+      <div class="thumb"><img src="img/13678919_23445098_1000_360x.webp" alt="Campus 00s"></div>
+      <div class="info">
+        <div class="title">Adidas Campus 00s</div>
+        <div class="muted">Suède • Confort quotidien</div>
+        <div class="price">99 900 F</div>
+      </div>
+    </article>
+
+    <article class="card" data-price="159900" data-name="Adidas Handball Spezial">
+      <div class="thumb"><img src="img/14527715_22320375_1000_360x.webp" alt="Spezial"></div>
+      <div class="info">
+        <div class="title">Adidas Handball Spezial</div>
+        <div class="muted">Look rétro</div>
+        <div class="price">159 900 F</div>
+      </div>
+      <div class="ribbon"><span>En solde</span></div>
+    </article>
+
+    <article class="card" data-price="89900" data-name="Adidas VL Court">
+      <div class="thumb"><img src="img/18514915_39989405_1000_360x.webp" alt="VL Court"></div>
+      <div class="info">
+        <div class="title">Adidas VL Court</div>
+        <div class="muted">Légère & casual</div>
+        <div class="price">89 900 F</div>
+      </div>
+    </article>
+
+    <article class="card" data-price="189900" data-name="Yeezy Boost 700">
+      <div class="thumb"><img src="img/21071473_51067033_1000_360x.webp" alt="Yeezy 700"></div>
+      <div class="info">
+        <div class="title">Yeezy Boost 700</div>
+        <div class="muted">Amorti Boost</div>
+        <div class="price">189 900 F</div>
+      </div>
+      <div class="ribbon"><span>En solde</span></div>
+    </article>
+
+    <article class="card" data-price="139900" data-name="Adidas Gazelle">
+      <div class="thumb"><img src="img/22206163_47712622_1000_360x.webp" alt="Gazelle"></div>
+      <div class="info">
+        <div class="title">Adidas Gazelle</div>
+        <div class="muted">Icône vintage</div>
+        <div class="price">139 900 F</div>
+      </div>
+    </article>
+
+    <article class="card" data-price="119900" data-name="Adidas Forum Low">
+      <div class="thumb"><img src="img/22206164_47711850_1000_360x.webp" alt="Forum Low"></div>
+      <div class="info">
+        <div class="title">Adidas Forum Low</div>
+        <div class="muted">Basket héritage</div>
+        <div class="price">119 900 F</div>
+      </div>
+    </article>
+
+    <article class="card" data-price="94900" data-name="Adidas Duramo">
+      <div class="thumb"><img src="img/23193818_53278028_1000_360x.webp" alt="Duramo"></div>
+      <div class="info">
+        <div class="title">Adidas Duramo</div>
+        <div class="muted">Running daily</div>
+        <div class="price">94 900 F</div>
+      </div>
+    </article>
+
+    <article class="card" data-price="209900" data-name="Adidas UltraBoost">
+      <div class="thumb"><img src="img/30455291_59902824_1000_360x.webp" alt="UltraBoost"></div>
+      <div class="info">
+        <div class="title">Adidas UltraBoost</div>
+        <div class="muted">Performance & confort</div>
+        <div class="price">209 900 F</div>
+      </div>
+      <div class="ribbon"><span>En solde</span></div>
+    </article>
+
+    <article class="card" data-price="79900" data-name="Adidas Lite Racer">
+      <div class="thumb"><img src="img/16548992_32180006_1000_360x.webp" alt="Lite Racer"></div>
+      <div class="info">
+        <div class="title">Adidas Lite Racer</div>
+        <div class="muted">Respirante</div>
+        <div class="price">79 900 F</div>
+      </div>
+    </article>
+
+    <article class="card" data-price="169900" data-name="Adidas NMD R1">
+      <div class="thumb"><img src="img/16548992_32180006_1000_360x.webp" alt="NMD R1"></div>
+      <div class="info">
+        <div class="title">Adidas NMD R1</div>
+        <div class="muted">Style urbain</div>
+        <div class="price">169 900 F</div>
+      </div>
+    </article>
+
+    <article class="card" data-price="114900" data-name="Adidas Courtmaster">
+      <div class="thumb"><img src="img/22362124_52344707_1000_360x.webp" alt="Courtmaster"></div>
+      <div class="info">
+        <div class="title">Adidas Courtmaster</div>
+        <div class="muted">Classique</div>
+        <div class="price">114 900 F</div>
+      </div>
+    </article>
+  </section>
+</main>
+
+<!-- ====== BOUTONS FLOTTANTS ====== -->
+<a class="fab whatsapp" href="https://wa.me/2250151736324" target="_blank" aria-label="Service Client WhatsApp">
+  <i class="bi bi-whatsapp" style="font-size:26px"></i>
+  <span>Service Client</span>
+</a>
+<button class="fab gift" aria-label="Cadeau / Promo">
+  <i class="bi bi-gift" style="font-size:24px"></i>
+</button>
+
+<!-- ====== DRAWER MOBILE ====== -->
+<div class="drawer" id="drawer" aria-hidden="true">
+  <aside class="panel" role="dialog" aria-label="Menu">
+    <h3>Catégories</h3>
+    <a href="#">Accueil</a>
+    <a href="#">Converse</a>
+    <a href="#">Nike</a>
+    <a href="#" class="active">Adidas</a>
+    <a href="#">New Balance</a>
+    <a href="#">Salomon</a>
+    <a href="#">Fila</a>
+    <a href="#">Asics</a>
+    <a href="#">Reebok</a>
+    <br>
+    <button id="closeMenu" style="padding:10px 12px; border:1px solid #ddd; border-radius:8px; background:#f8f8f8; cursor:pointer">Fermer</button>
+  </aside>
+</div>
+
+<script>
+  // ===== Tri =====
+  const grid = document.getElementById('grid');
+  const sortSelect = document.getElementById('sort');
+  sortSelect.addEventListener('change', () => {
+    const cards = Array.from(grid.querySelectorAll('.card'));
+    const mode = sortSelect.value;
+    cards.sort((a,b)=>{
+      if(mode==='asc') return (+a.dataset.price) - (+b.dataset.price);
+      if(mode==='desc') return (+b.dataset.price) - (+a.dataset.price);
+      if(mode==='name') return a.dataset.name.localeCompare(b.dataset.name);
+      return 0;
     });
+    cards.forEach(c=>grid.appendChild(c));
+  });
 
-    // ===== Drawer Mobile =====
-    const drawer = document.getElementById('drawer');
-    document.getElementById('openMenu').onclick = ()=> drawer.classList.add('open');
-    document.getElementById('closeMenu').onclick = ()=> drawer.classList.remove('open');
-    drawer.addEventListener('click', e=>{ if(e.target===drawer) drawer.classList.remove('open'); });
-  </script>
+  // ===== Drawer Mobile =====
+  const drawer = document.getElementById('drawer');
+  document.getElementById('openMenu').onclick = ()=> drawer.classList.add('open');
+  document.getElementById('closeMenu').onclick = ()=> drawer.classList.remove('open');
+  drawer.addEventListener('click', e=>{ if(e.target===drawer) drawer.classList.remove('open'); });
+</script>
 </body>
 </html>
